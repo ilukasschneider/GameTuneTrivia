@@ -14,6 +14,7 @@ export const HoverEffect = ({
   }[];
   className?: string;
 }) => {
+  // State to keep track of the current hovered item index
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -28,15 +29,16 @@ export const HoverEffect = ({
           href={item?.link}
           key={item?.link}
           className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
+          onMouseEnter={() => setHoveredIndex(idx)} // Set the hovered index on mouse enter
+          onMouseLeave={() => setHoveredIndex(null)} // Reset the hovered index on mouse leave
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
+              // Conditional rendering of hover effect based on the hovered index
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-accent dark:bg-accent block  rounded-3xl"
                 layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 0 }} // Initial animation state
                 animate={{
                   opacity: 1,
                   transition: { duration: 0.15 },
@@ -64,10 +66,11 @@ export const Card = ({
   className?: string;
   children: React.ReactNode;
 }) => {
+  // Card component for displaying each item
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-1 overflow-hidden bg-white border border-black dark:bg-black dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-1 overflow-hidden bg-white border border-black/[0.2] group-hover:border-black/[0.8] dark:bg-background dark:border-white/[0.2] dark:group-hover:border-white/[0.8] relative z-20",
         className,
       )}
     >
@@ -84,6 +87,7 @@ export const CardTitle = ({
   className?: string;
   children: React.ReactNode;
 }) => {
+  // Component for rendering the title of each card
   return (
     <h4 className={cn("text-zinc font-bold tracking-wide mt-4", className)}>
       {children}

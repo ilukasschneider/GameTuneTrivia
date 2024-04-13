@@ -11,7 +11,7 @@ export function Navbar() {
         <nav className="flex gap-4 sm:gap-6">
           {/* Navigation Link for Features */}
           <Button variant="ghost" asChild>
-            <Link href="/">Todays Tune</Link>
+            <Link href="/today">Todays Tune</Link>
           </Button>
 
           {/* Navigation Link for Pricing */}
