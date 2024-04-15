@@ -1,3 +1,34 @@
-export default function Page() {
-  return <div className="max-w-5xl relative top-12 mx-auto px-20">Hello</div>;
+"use client";
+
+import React from "react";
+import ReactPlayer from "react-player";
+
+// Render a YouTube video player
+
+// Component displaying today's tune with an animated canvas reveal effect.
+export default function Tune() {
+  return (
+    <div className="bg-black py-20 flex flex-col lg:flex-row items-center justify-center  w-full gap-4 mx-auto px-12">
+      <div className="py-20 flex flex-col lg:flex-row items-center justify-center  w-full gap-4 mx-auto px-12">
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=13U4oqAZy8U"
+          controls={false}
+          config={{
+            soundcloud: {
+              options: {
+                buying: false,
+                sharing: false,
+                download: false,
+                show_artwork: false,
+                show_user: false,
+              },
+            },
+            youtube: {
+              playerVars: { showinfo: 1 },
+            },
+          }}
+        />
+      </div>
+    </div>
+  );
 }
