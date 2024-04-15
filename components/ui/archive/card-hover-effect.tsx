@@ -9,7 +9,6 @@ export const HoverEffect = ({
 }: {
   items: {
     title: string;
-    description: string;
     link: string;
   }[];
   className?: string;
@@ -70,7 +69,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-1 overflow-hidden bg-white border border-black/[0.2] group-hover:border-black/[0.8] dark:bg-background dark:border-white/[0.2] dark:group-hover:border-white/[0.8] relative z-20",
+        "rounded-2xl h-full w-full p-1 overflow-hidden bg-white border border-black/[0.2] group-hover:border-primary dark:bg-background dark:border-accent dark:group-hover:border-primary relative z-20",
         className,
       )}
     >

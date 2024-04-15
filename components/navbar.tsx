@@ -12,7 +12,6 @@ export function Navbar() {
         <Button variant="ghost" asChild>
           <Link href="/archive">Archive</Link>
         </Button>
-        <Button variant="ghost">Coffee</Button>
         <Button variant="ghost">About</Button>
         <ModeToggle />
       </nav>
