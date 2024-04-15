@@ -1,34 +1,18 @@
-"use client";
-
 import React from "react";
-import ReactPlayer from "react-player";
-
+import { TunePlayer } from "@/components/ui/audio-player/tune-player";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 // Render a YouTube video player
 
 // Component displaying today's tune with an animated canvas reveal effect.
 export default function Tune() {
   return (
-    <div className="bg-background py-20 flex flex-col lg:flex-row items-center justify-center  w-full gap-4 mx-auto px-12">
-      <div className="md:clip-path-inset py-20 flex flex-col lg:flex-row items-center justify-center  w-full gap-4 mx-auto px-12">
-        <ReactPlayer
-          url="https://www.youtube.com/watch?v=13U4oqAZy8U"
-          controls={false}
-          config={{
-            soundcloud: {
-              options: {
-                buying: false,
-                sharing: false,
-                download: false,
-                show_artwork: false,
-                show_user: false,
-              },
-            },
-            youtube: {
-              playerVars: { showinfo: 1 },
-            },
-          }}
-        />
+    <>
+      <TunePlayer />
+      <div className="flex  place-content-center place-items-center lg:flex-row gap-8 sm:gap-6  m-auto max-w-80">
+        <Input type="tune in your guess" placeholder="tune in your guess" />
+        <Button type="submit">Guess</Button>
       </div>
-    </div>
+    </>
   );
 }
