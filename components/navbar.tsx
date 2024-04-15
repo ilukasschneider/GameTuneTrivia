@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   return (
-    <div className="bg-white sticky top-12 bottom-12 flex flex-col min-h-[12dvh] dark:bg-background justify-center items-center">
+    <div className="bg-white sticky top-12 bottom-12 flex flex-col min-h-[12dvh] dark:bg-background justify-center items-center z-50">
       <nav className="flex flex-col lg:flex-row gap-8 sm:gap-6  items-center lg:items-start">
         <Button variant="ghost" asChild>
           <Link href="/today">Todays Tune</Link>
