@@ -1,14 +1,18 @@
 import "@/styles/globals.css";
-import { pixelifySans } from "@/components/ui/fonts";
+import {
+  pixelifySans,
+  manrope,
+  josefinSans,
+  inter,
+} from "@/components/ui/fonts";
 import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar } from "@/components/navbar";
 import { Navbar2 } from "@/components/navbar2";
 
 export const metadata: Metadata = {
-  title: "GAME_TUNES_TRIVIA",
-  description: "GAME_TUNES_TRIVIA",
+  title: "Game Tunes Trivia",
+  description: "Where Gaming Meets Melody",
 };
 
 export default function RootLayout({
@@ -21,7 +25,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          pixelifySans.variable,
+          inter.variable,
         )}
       >
         <ThemeProvider
