@@ -52,13 +52,13 @@ export function Navbar2() {
                       {/* Project logo */}
                       {/* Project name */}
                       <div className="mb-2 mt-4 text-lg font-medium text-white">
-                        Today's Tune
+                        Today&apos;s Tune
                       </div>
                       {/* Project description */}
                       <p className="text-sm leading-tight text-white">
                         Embark on a captivating journey of sonic exploration as
                         you endeavor to unlock the melodic enigma woven within
-                        today's Game Tune.
+                        today&apos;s Game Tune.
                       </p>
                     </a>
                   </NavigationMenuLink>
