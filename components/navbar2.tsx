@@ -16,17 +16,20 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Button } from "./ui/button";
+import { HomeIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 // Data for the components section of the navigation menu
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "About Game Tune Trivia",
-    href: "/docs/primitives/hover-card",
+    href: "/about",
     description: "Discover the Symphony Behind the Scenes",
   },
   {
     title: "Legal",
-    href: "/docs/primitives/alert-dialog",
+    href: "/legal",
     description: "Perfect harmony with regulations and rights.",
   },
 ];
@@ -36,6 +39,12 @@ export function Navbar2() {
     <header className="fixed top-0 z-50 w-full bg-white dark:bg-background">
       <NavigationMenu className="sticky top-0 object-centermax-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavigationMenuList>
+          <Link href="/today">
+            <Button variant="ghost" size="icon">
+              <HomeIcon />
+              <span className="sr-only">Home</span>
+            </Button>
+          </Link>
           {/* Navigation item for the "Getting started" section */}
           <NavigationMenuItem>
             <NavigationMenuTrigger>Tune Selection</NavigationMenuTrigger>
@@ -47,7 +56,7 @@ export function Navbar2() {
                   <NavigationMenuLink asChild>
                     <a
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-destructive p-6 no-underline outline-none focus:shadow-md"
-                      href="/"
+                      href="/tune"
                     >
                       {/* Project logo */}
                       {/* Project name */}
@@ -64,10 +73,10 @@ export function Navbar2() {
                   </NavigationMenuLink>
                 </li>
                 {/* List items for different sections under "Getting started" */}
-                <ListItem href="/docs" title="Tune Archive">
+                <ListItem href="/archive" title="Tune Archive">
                   Your chic sanctuary for game music aficionados.
                 </ListItem>
-                <ListItem href="/docs" title="Random Tune">
+                <ListItem href="/tune" title="Random Tune">
                   Where serendipity meets melody.
                 </ListItem>
               </ul>

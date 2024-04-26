@@ -52,7 +52,7 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle>{item.title}</CardTitle>{" "}
+            <CardTitle>{item.title}</CardTitle>
             {/* Display the title of the current item. */}
           </Card>
         </Link>
@@ -78,7 +78,7 @@ export const Card = ({
       )}
     >
       <div className="relative z-50">
-        <div className="p-4">{children}</div>{" "}
+        <div className="p-4">{children}</div>
         {/* Render the children passed to Card, typically content or other components. */}
       </div>
     </div>
@@ -95,7 +95,10 @@ export const CardTitle = ({
   // This component is used for rendering the title of each card. It can accept additional className props for styling.
   return (
     <h4 // Render the children within an h4 element, applying additional styles as needed.
-      className={cn("text-zinc font-bold tracking-wide mt-4", className)}
+      className={cn(
+        "text-zinc font-regular tracking-wide text-center",
+        className,
+      )}
     >
       {children}
     </h4>
