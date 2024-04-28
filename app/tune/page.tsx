@@ -1,20 +1,18 @@
-import React from "react";
 import { TunePlayer } from "@/components/ui/audio-player/tune-player";
-import { Button } from "@/components/ui/button";
+import Search from "@/components/ui/game-ui/search";
 import { Input } from "@/components/ui/input";
-// Render a YouTube video player
+import { TuneSearch } from "@/components/ui/game-ui/tune-search";
 
-// Component displaying today's tune with an animated canvas reveal effect.
+const x = {
+  name: "Kingdom Hearts",
+};
 export default function Tune() {
   return (
     <>
+      {/* Audio player component */}
       <TunePlayer />
-      <div className="flex  place-content-center place-items-center lg:flex-row gap-8 sm:gap-6  m-auto max-w-80">
-        <Input type="tune in your guess" placeholder="tune in your guess" />
-        <Button type="submit" variant="outline">
-          Guess
-        </Button>
-      </div>
+      <TuneSearch />
+      {/* Search component */}
     </>
   );
 }
