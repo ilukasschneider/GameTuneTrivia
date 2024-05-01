@@ -2,12 +2,13 @@ import Link from "next/link";
 import CustomImage from "@/components/ui/game-ui/custom-image";
 import api from "@/api/igdb";
 
-export default async function Search(searchParams: any) {
+export default async function SearchPage() {
   const searchGame = {
-    name: "Kingdom Hearts",
+    name: "Mario",
   };
-  const games = await api.search(searchGame);
 
+  const games = await api.search(searchGame);
+  console.log(games);
   return (
     <div className="px-4 xl:px-40">
       {/* Check if any games were found */}

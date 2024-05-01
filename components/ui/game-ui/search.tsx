@@ -5,7 +5,8 @@ import api from "@/api/igdb";
 export default async function Search({ searchParams }: any) {
   // Use the search function from the API with the given search parameters
   const games = await api.search(searchParams);
-
+  console.log(games.length);
+  console.log(searchParams);
   return (
     <div className="px-4 xl:px-40">
       {/* Check if any games were found */}
@@ -32,7 +33,7 @@ export default async function Search({ searchParams }: any) {
         </div>
       ) : (
         // Display a message if no games were found
-        <h2 className="mt-4">No games found</h2>
+        <h2 className="mt-4">No games found!</h2>
       )}
     </div>
   );
