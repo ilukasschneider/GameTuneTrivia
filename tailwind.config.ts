@@ -84,7 +84,11 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("tailwind-clip-path")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("tailwind-clip-path"),
+    require("tailwind-scrollbar"),
+  ],
 };
 
 export default config;

@@ -8,7 +8,7 @@ import {
 import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Navbar2 } from "@/components/navbar2";
+import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: "Game Tunes Trivia",
@@ -34,7 +34,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar2 />
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
