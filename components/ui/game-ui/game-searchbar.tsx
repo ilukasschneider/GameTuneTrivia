@@ -2,7 +2,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { getAllGames } from "./igdb-db-utils"; // Import search functions from utils
-
 import { Check, ChevronsUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +10,7 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
+  CommandList,
 } from "@/components/ui/command";
 
 import {
@@ -18,6 +18,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import Image from "next/image";
 
 interface Game {
   id: string;
@@ -33,23 +34,13 @@ export default function GameSearchbar() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
 
-  const loadGames = async () => {
-    try {
+  useEffect(() => {
+    const loadGames = async () => {
       const gamesData = await getAllGames();
-      // Ensure gamesData is an array before setting state
-      if (Array.isArray(gamesData)) {
-        setAllGames(gamesData);
-      } else {
-        console.error("Fetched data is not an array:", gamesData);
-        setAllGames([]); // Fallback to an empty array in case of error
-      }
-    } catch (error) {
-      console.error("Error fetching games:", error);
-      setAllGames([]); // Ensuring allGames remains an array, even in case of error
-    }
-  };
-
-  loadGames(); // Load games once on component mount
+      setAllGames(gamesData); // Assuming gamesData is immediately usable or adapt as needed
+    };
+    loadGames();
+  }, []); // Load games once on component mount
 
   return (
     <>
@@ -60,7 +51,7 @@ export default function GameSearchbar() {
               variant="outline"
               role="combobox"
               aria-expanded={open}
-              className="w-[200px] justify-between"
+              className="w-[400px] justify-between"
             >
               {value
                 ? allGames.find((game) => game.name === value)?.name
@@ -68,38 +59,38 @@ export default function GameSearchbar() {
               <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-[200px] p-0">
+          <PopoverContent className="w-[400px] p-0">
             <Command>
               <CommandInput placeholder="Search games..." />
               {allGames.length === 0 && (
                 <CommandEmpty>No games found.</CommandEmpty>
               )}
-              <CommandGroup>
-                {" "}
-                {allGames.map((game) => (
-                  <CommandItem
-                    key={game.id}
-                    value={game.name}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
-                      setOpen(false);
-                    }}
-                  >
-                    <Check
-                      className={`mr-2 h-4 w-4 ${value === game.name ? "opacity-100" : "opacity-0"}`}
-                    />
-                    {game.name}
-                  </CommandItem>
-                ))}
-              </CommandGroup>
+              <CommandList className="scrollbar-none">
+                <CommandGroup>
+                  {allGames.map((game) => (
+                    <CommandItem
+                      key={game.id}
+                      value={game.name}
+                      onSelect={(currentValue) => {
+                        setValue(currentValue === value ? "" : currentValue);
+                        setOpen(false);
+                      }}
+                    >
+                      <Image
+                        src={game.coverUrl}
+                        width={60}
+                        height={60}
+                        alt={game.name}
+                        className="h-8 w-8 mr-2 rounded-md"
+                      />
+                      {game.name}
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              </CommandList>
             </Command>
           </PopoverContent>
         </Popover>
-      </div>
-      <div>
-        {allGames.map((game) => (
-          <p key={game.id}>{game.name}</p>
-        ))}
       </div>
     </>
   );
