@@ -1,20 +1,16 @@
 import data from "@/lib/igdb/igdb-data.json";
 
-// Function to search for games by name containing a specific string
 export function searchGameName(
   searchString: string,
 ): Array<{ id: string; name: string; coverUrl: string }> {
-  // Convert the games object into an array of its values (the individual games)
   const gamesArray = Object.values(data.games);
 
-  // Filter the array to find games where the game name includes the searchString
   const filteredGames = gamesArray.filter((game) =>
     game.name.toLowerCase().includes(searchString.toLowerCase()),
   );
 
-  // Map the filtered games to the requested format
   const formattedGames = filteredGames.map((game) => ({
-    id: `${game.id}`, // Convert ID to string, if necessary
+    id: `${game.id}`,
     name: game.name,
     coverUrl: game.cover ? `https://${game.cover.url}` : "No cover available",
   }));
@@ -22,8 +18,28 @@ export function searchGameName(
   return formattedGames;
 }
 
-export function searchGameID() {
-  // Function to search for a game by its unique identifier
+export function getAllGames(): Array<{
+  id: string;
+  name: string;
+  coverUrl: string;
+  company: string;
+  releaseYear: number;
+  genres: Array<string>;
+}> {
+  const gamesArray = Object.values(data.games);
 
+  const formattedGames = gamesArray.map((game) => ({
+    id: `${game.id}`,
+    name: game.name,
+    coverUrl: game.cover ? `https://${game.cover.url}` : "No cover available",
+    company: game.involvedCompanies.map((ic) => ic.company.name).join(", "),
+    releaseYear: new Date(game.releaseYear * 1000).getFullYear(),
+    genres: game.genres.map((genre) => genre.name),
+  }));
+
+  return formattedGames;
+}
+
+export function searchGameID() {
   return null;
 }

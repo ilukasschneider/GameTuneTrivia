@@ -1,113 +1,106 @@
 "use client";
+import React from "react";
 import { useEffect, useState } from "react";
-import { searchGameName, searchGameID } from "./igdb-db-utils"; // Import search functions from utils
-import Autocomplete from "@mui/joy/Autocomplete"; // Import Autocomplete component from MUI Joy
-import AutocompleteOption from "@mui/joy/AutocompleteOption"; // Import AutocompleteOption component from MUI Joy
-import ListItemDecorator from "@mui/joy/ListItemDecorator"; // Import ListItemDecorator component from MUI Joy
-import ListItemContent from "@mui/joy/ListItemContent"; // Import ListItemContent component from MUI Joy
-import Image from "next/image"; // Import Image component from Next.js for optimised images
+import { getAllGames } from "./igdb-db-utils"; // Import search functions from utils
+
+import { Check, ChevronsUpDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "@/components/ui/command";
+
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 interface Game {
   id: string;
   name: string;
-  coverUrl: string; // Define Game interface with id, name, and coverUrl
+  coverUrl: string;
+  company: string;
+  releaseYear: number;
+  genres: Array<string>;
 }
 
 export default function GameSearchbar() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [games, setGames] = useState<Game[]>([]);
-  const [selectedGame, setSelectedGame] = useState<Game | null>(null); // New state for tracking the selected game
+  const [allGames, setAllGames] = useState<Game[]>([]); // Use state to hold games
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
 
-  useEffect(() => {
-    if (searchTerm) {
-      const gamesResult = searchGameName(searchTerm);
-      setGames(gamesResult);
-    } else {
-      setGames([]);
+  const loadGames = async () => {
+    try {
+      const gamesData = await getAllGames();
+      // Ensure gamesData is an array before setting state
+      if (Array.isArray(gamesData)) {
+        setAllGames(gamesData);
+      } else {
+        console.error("Fetched data is not an array:", gamesData);
+        setAllGames([]); // Fallback to an empty array in case of error
+      }
+    } catch (error) {
+      console.error("Error fetching games:", error);
+      setAllGames([]); // Ensuring allGames remains an array, even in case of error
     }
-  }, [searchTerm]);
+  };
+
+  loadGames(); // Load games once on component mount
 
   return (
-    <div className="outline-8 outline-white justify-items-center grid gap-3 p-6 ">
-      <div className="game-search-container">
-        <Autocomplete
-          variant="outlined"
-          slotProps={{
-            root: {
-              className: "bg-background dark:text-white",
-            },
-            listbox: {
-              className: "scrollbar-none bg-background",
-            },
-            option: {
-              className: "hover:none dark:hover:none",
-            },
-          }}
-          freeSolo
-          value={searchTerm}
-          onChange={(event, newValue) => {
-            if (typeof newValue === "object" && newValue !== null) {
-              setSelectedGame(newValue); // Update selected game when a game is selected
-            } else {
-              setSelectedGame(null); // Clear selection if input is cleared or not a game object
-            }
-          }}
-          onInputChange={(event, newInputValue) => {
-            setSearchTerm(newInputValue);
-          }}
-          options={games}
-          getOptionLabel={(option) =>
-            typeof option === "string" ? option : option.name || ""
-          }
-          renderOption={(props, option) => (
-            <AutocompleteOption
-              {...props}
-              key={option.id}
-              slotProps={{
-                root: {
-                  className: "bg-background dark:text-white",
-                },
-              }}
+    <>
+      <div className="className=outline-8 outline-white justify-items-center grid gap-3 p-6 ">
+        <Popover open={open} onOpenChange={setOpen}>
+          <PopoverTrigger asChild>
+            <Button
+              variant="outline"
+              role="combobox"
+              aria-expanded={open}
+              className="w-[200px] justify-between"
             >
-              <ListItemDecorator
-                slotProps={{
-                  root: {
-                    className: "bg-background dark:text-white",
-                  },
-                }}
-              >
-                <div className="rounded-md">
-                  <Image
-                    width="40"
-                    height="40"
-                    src={option.coverUrl}
-                    alt={option.name}
-                    onError={({ currentTarget }) => {
-                      currentTarget.onerror = null;
-                      currentTarget.src = "path/to/default/image";
+              {value
+                ? allGames.find((game) => game.name === value)?.name
+                : "Select a game..."}
+              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-[200px] p-0">
+            <Command>
+              <CommandInput placeholder="Search games..." />
+              {allGames.length === 0 && (
+                <CommandEmpty>No games found.</CommandEmpty>
+              )}
+              <CommandGroup>
+                {" "}
+                {allGames.map((game) => (
+                  <CommandItem
+                    key={game.id}
+                    value={game.name}
+                    onSelect={(currentValue) => {
+                      setValue(currentValue === value ? "" : currentValue);
+                      setOpen(false);
                     }}
-                  />
-                </div>
-              </ListItemDecorator>
-              <ListItemContent
-                slotProps={{
-                  root: {
-                    className: "pl-4",
-                  },
-                }}
-              >
-                {option.name}
-              </ListItemContent>
-            </AutocompleteOption>
-          )}
-          sx={{ width: 300 }}
-        />
+                  >
+                    <Check
+                      className={`mr-2 h-4 w-4 ${value === game.name ? "opacity-100" : "opacity-0"}`}
+                    />
+                    {game.name}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </Command>
+          </PopoverContent>
+        </Popover>
       </div>
-      <div className="outline-8 outline-white justify-items-center grid gap-3 p-6">
-        {" "}
-        {/* Display the selected game's name if a game is selected */}
-        {selectedGame && <p>Selected Game: {selectedGame.name}</p>}
+      <div>
+        {allGames.map((game) => (
+          <p key={game.id}>{game.name}</p>
+        ))}
       </div>
-    </div>
+    </>
   );
 }
