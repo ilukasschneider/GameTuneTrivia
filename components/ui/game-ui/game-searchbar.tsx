@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { useEffect, useState } from "react";
-import { getAllGames } from "./igdb-db-utils"; // Import search functions from utils
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Game, getAllGames } from "./igdb-db-utils"; // Import search functions from utils
+import { ChevronsUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -20,15 +20,6 @@ import {
 } from "@/components/ui/popover";
 import Image from "next/image";
 
-interface Game {
-  id: string;
-  name: string;
-  coverUrl: string;
-  company: string;
-  releaseYear: number;
-  genres: Array<string>;
-}
-
 export default function GameSearchbar() {
   const [allGames, setAllGames] = useState<Game[]>([]); // Use state to hold games
   const [open, setOpen] = useState(false);
@@ -44,7 +35,7 @@ export default function GameSearchbar() {
 
   return (
     <>
-      <div className="className=outline-8 outline-white justify-items-center grid gap-3 p-6 ">
+      <div className="className=outline-8 outline-white justify-items-center grid gap-3 p-6 m-5 ">
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
@@ -56,7 +47,7 @@ export default function GameSearchbar() {
               {value
                 ? allGames.find((game) => game.name === value)?.name
                 : "Select a game..."}
-              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+              <ChevronsUpDown className=" h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-[400px] p-0">

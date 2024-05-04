@@ -1,5 +1,14 @@
 import data from "@/lib/igdb/igdb-data.json";
 
+export interface Game {
+  id: string;
+  name: string;
+  coverUrl: string;
+  company: string;
+  releaseYear: number;
+  genres: Array<string>;
+}
+
 export function searchGameName(
   searchString: string,
 ): Array<{ id: string; name: string; coverUrl: string }> {
