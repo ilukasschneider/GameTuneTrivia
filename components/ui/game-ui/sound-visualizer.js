@@ -2,7 +2,6 @@
 import * as THREE from "three";
 import React from "react";
 import PropTypes from "prop-types";
-import song2 from "@/public/mp3/Grandma.mp3";
 
 class SoundVisualizer extends React.Component {
   componentDidMount() {
@@ -47,6 +46,7 @@ class SoundVisualizer extends React.Component {
       sound.setBuffer(buffer); // Set the buffer to the loaded audio data.
       sound.setLoop(true); // Enable looping of the audio.
       sound.setVolume(1); // Set the volume at full level.
+      sound.play(); // Play the audio.
     });
     this.sound = sound;
     // Create an analyser for the audio data.
