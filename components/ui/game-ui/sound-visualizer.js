@@ -31,6 +31,7 @@ class SoundVisualizer extends React.Component {
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     // Set the size of the rendering viewport.
     this.renderer.setSize(this.dimension, this.dimension);
+
     // Append the renderer's canvas element to the DOM.
     this.mount.appendChild(this.renderer.domElement);
 
@@ -45,8 +46,7 @@ class SoundVisualizer extends React.Component {
     audioLoader.load(this.props.audio, function (buffer) {
       sound.setBuffer(buffer); // Set the buffer to the loaded audio data.
       sound.setLoop(true); // Enable looping of the audio.
-      sound.setVolume(1); // Set the volume at full level.
-      sound.play(); // Play the audio.
+      sound.setVolume(0.6); // Set the volume at full level.
     });
     this.sound = sound;
     // Create an analyser for the audio data.
@@ -75,7 +75,7 @@ class SoundVisualizer extends React.Component {
     this.renderer.render(this.scene, this.camera);
 
     // Check if enough time has passed to update the animation.
-    if (!this.last || now - this.last >= 5) {
+    if (!this.last || now - this.last >= 1) {
       this.last = now;
       // Get the frequency data from the analyser.
       const data = this.analyser.getFrequencyData();
@@ -88,15 +88,15 @@ class SoundVisualizer extends React.Component {
 
   addLine(fftValues) {
     // Create a plane geometry to represent the line.
-    const planeGeometry = new THREE.PlaneGeometry(200 - 1, 1, 200 - 1, 1);
+    const planeGeometry = new THREE.PlaneGeometry(800 - 1, 1, 200 - 1, 1);
 
     // Create a mesh for the plane with basic material.
     const plane = new THREE.Mesh(
       planeGeometry,
       new THREE.MeshBasicMaterial({
-        color: 0x000000, // Black color
+        color: 0xcb1431, // Black color
         wireframe: false, // No wireframe
-        transparent: false, // Not transparent
+        transparent: true, // Not transparent
       }),
     );
     // Add the plane mesh to the lines group.
@@ -119,9 +119,9 @@ class SoundVisualizer extends React.Component {
 
     // Create a material for the line with some transparency.
     const lineMat = new THREE.LineBasicMaterial({
-      color: 0xe1e1e1, // Light gray color
-      transparent: true,
-      opacity: 0.57, // Partial opacity
+      color: 0xd9622b,
+      transparent: false,
+      opacity: 0.8,
     });
     // Create the line from the geometry and material.
     const line = new THREE.Line(lineGeometry, lineMat);
@@ -137,7 +137,7 @@ class SoundVisualizer extends React.Component {
       } else if (i >= 100 && i < 161) {
         y += fftValues[i - 97];
       }
-      y = Math.pow(y, 1.2); // Apply a power to exaggerate the effect.
+      y = Math.pow(y, 1.22); // Apply a power to exaggerate the effect.
 
       // Update the plane and line geometry with the new y positions.
       plane.geometry.attributes.position.array[i * 3 + 1] = y;
@@ -158,7 +158,7 @@ class SoundVisualizer extends React.Component {
       }
 
       // Check if the plane has moved far enough to be removed.
-      if (plane.geometry.attributes.position.array[2] <= -1000) {
+      if (plane.geometry.attributes.position.array[2] <= -600) {
         planesThatHaveGoneFarEnough.push(plane);
       } else {
         // Mark the geometries as needing an update.
@@ -206,15 +206,13 @@ class SoundVisualizer extends React.Component {
   render() {
     // Render the component's HTML structure.
     return (
-      <div>
-        <div
-          style={{ cursor: "pointer" }} // CSS Styling to change the cursor to a pointer
-          className="justify-items-center grid gap-3"
-          ref={(ref) => (this.mount = ref)}
-          onClick={this.onClick.bind(this)}
-          onWindowResize={this.onWindowResize.bind(this)}
-        />
-      </div>
+      <div
+        style={{ cursor: "pointer" }} // CSS Styling to change the cursor to a pointer
+        className="justify-items-center grid gap-3"
+        ref={(ref) => (this.mount = ref)}
+        onClick={this.onClick.bind(this)}
+        onWindowResize={this.onWindowResize.bind(this)}
+      />
     );
   }
 }
