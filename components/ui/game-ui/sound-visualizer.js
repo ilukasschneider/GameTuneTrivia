@@ -1,7 +1,8 @@
 "use client";
 import * as THREE from "three";
-import song from "@/public/mp3/Grandma.mp3";
 import React from "react";
+import PropTypes from "prop-types";
+import song2 from "@/public/mp3/Grandma.mp3";
 
 class SoundVisualizer extends React.Component {
   componentDidMount() {
@@ -41,7 +42,7 @@ class SoundVisualizer extends React.Component {
     const sound = new THREE.Audio(listener);
     // Load a sound and set it as the Audio object's buffer.
     const audioLoader = new THREE.AudioLoader();
-    audioLoader.load(song, function (buffer) {
+    audioLoader.load(this.props.audio, function (buffer) {
       sound.setBuffer(buffer); // Set the buffer to the loaded audio data.
       sound.setLoop(true); // Enable looping of the audio.
       sound.setVolume(1); // Set the volume at full level.
@@ -216,4 +217,8 @@ class SoundVisualizer extends React.Component {
     );
   }
 }
+
+SoundVisualizer.propTypes = {
+  audio: PropTypes.string.isRequired,
+};
 export default SoundVisualizer;

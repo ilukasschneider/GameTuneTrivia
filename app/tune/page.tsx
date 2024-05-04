@@ -3,6 +3,7 @@ import { TunePlayer } from "@/components/ui/audio-player/tune-player"; // Import
 import React from "react";
 import GameSearchbar from "@/components/ui/game-ui/game-searchbar";
 import SoundVisualizer from "@/components/ui/game-ui/sound-visualizer";
+import audio from "@/public/mp3/Grandma.mp3";
 
 const tune = {
   id: "342",
@@ -14,7 +15,7 @@ const tune = {
 export default function Tune() {
   return (
     <>
-      <SoundVisualizer />
+      <SoundVisualizer audio={audio} />
       <GameSearchbar />
     </>
   );
