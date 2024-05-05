@@ -61,10 +61,6 @@ class SoundVisualizer extends React.Component {
 
     // Timestamp for controlling the animation rate.
     this.last = 0;
-
-    // Event listeners for resizing the window and clicking.
-    window.addEventListener("resize", this.onWindowResize.bind(this), false);
-    this.mount.addEventListener("click", this.onClick.bind(this), false);
   }
 
   animate(now) {
@@ -226,6 +222,5 @@ class SoundVisualizer extends React.Component {
 
 SoundVisualizer.propTypes = {
   audio: PropTypes.string.isRequired,
-  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 export default SoundVisualizer;
