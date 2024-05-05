@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import GameSearchbar from "@/components/ui/game-ui/game-searchbar";
 import SoundVisualizer from "@/components/ui/game-ui/sound-visualizer";
