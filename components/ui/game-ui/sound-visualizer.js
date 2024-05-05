@@ -226,5 +226,6 @@ class SoundVisualizer extends React.Component {
 
 SoundVisualizer.propTypes = {
   audio: PropTypes.string.isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 export default SoundVisualizer;

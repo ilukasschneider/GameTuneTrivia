@@ -1,30 +1,37 @@
 /** @type {import('next').NextConfig} */
 // next.config.mjs
+import urlLoader from "url-loader";
+import fileLoader from "file-loader";
 
 // Define your Next.js configuration object
 const nextConfig = {
   images: {
     domains: ["images.igdb.com"],
   },
-  // Adding custom Webpack config
-  webpack(config, options) {
-    // Adding a new rule to handle mp3 files
+  webpack(config, { isServer }) {
+    // Push a new rule for audio files
     config.module.rules.push({
-      test: /\.(mp3)$/,
-      use: {
-        loader: "file-loader",
-        options: {
-          publicPath: "/static/sounds/",
-          outputPath: "static/sounds/",
-          name: "[name].[ext]",
-          esModule: false, // This is important for compatibility reasons
+      test: /\.(ogg|mp3|wav|mpe?g)$/i,
+      exclude: config.exclude,
+      use: [
+        {
+          // Use the string identifier for the loader instead of importing it
+          loader: "url-loader",
+          options: {
+            limit: config.inlineImageLimit,
+            fallback: "file-loader", // Specify the fallback loader as a string
+            publicPath: `${config.assetPrefix || ""}/_next/static/images/`,
+            outputPath: `${isServer ? "../" : ""}static/images/`,
+            name: "[name]-[hash].[ext]",
+            esModule: config.esModule || false,
+          },
         },
-      },
+      ],
     });
 
-    // Always return the modified configuration
     return config;
   },
+  // Adding custom Webpack conf
 };
 
 // Export your configuration object with ESM syntax

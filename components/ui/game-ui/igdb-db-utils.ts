@@ -80,7 +80,7 @@ export async function getMainColorsOfGameCover(gameId: Number) {
     // Assuming the palette provides an RGB array for the top color
     // Convert RGB to HEX
     const mainColorHex = `#${palette[0].toString(16).padStart(2, "0")}${palette[1].toString(16).padStart(2, "0")}${palette[2].toString(16).padStart(2, "0")}`;
-
+    console.log(`Main color of the cover is ${mainColorHex}`);
     // Return as desired, here's an example assuming just one color is needed
     return [mainColorHex];
   } catch (error) {
