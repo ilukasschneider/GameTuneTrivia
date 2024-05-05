@@ -28,7 +28,10 @@ class SoundVisualizer extends React.Component {
     );
 
     // Create a WebGL renderer with antialiasing enabled.
-    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    this.renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+    });
     // Set the size of the rendering viewport.
     this.renderer.setSize(this.dimension, this.dimension);
 
@@ -42,11 +45,10 @@ class SoundVisualizer extends React.Component {
     const sound = new THREE.Audio(listener);
     // Load a sound and set it as the Audio object's buffer.
     const audioLoader = new THREE.AudioLoader();
-    console.log(this.props.audio);
     audioLoader.load(this.props.audio, function (buffer) {
       sound.setBuffer(buffer); // Set the buffer to the loaded audio data.
       sound.setLoop(true); // Enable looping of the audio.
-      sound.setVolume(0.6); // Set the volume at full level.
+      sound.setVolume(0.6);
     });
     this.sound = sound;
     // Create an analyser for the audio data.
@@ -63,9 +65,6 @@ class SoundVisualizer extends React.Component {
     // Event listeners for resizing the window and clicking.
     window.addEventListener("resize", this.onWindowResize.bind(this), false);
     this.mount.addEventListener("click", this.onClick.bind(this), false);
-
-    // Begin the animation loop.
-    this.animate();
   }
 
   animate(now) {
@@ -119,7 +118,7 @@ class SoundVisualizer extends React.Component {
 
     // Create a material for the line with some transparency.
     const lineMat = new THREE.LineBasicMaterial({
-      color: 0xd9622b,
+      color: 0xcb3c31,
       transparent: false,
       opacity: 0.8,
     });
@@ -184,11 +183,19 @@ class SoundVisualizer extends React.Component {
   }
 
   onClick() {
-    // Toggle play/pause on the sound object when the canvas is clicked.
-    if (this.sound.isPlaying) {
-      this.sound.pause();
+    // Modified to handle initial start and subsequent play/pause actions.
+    if (!this.isStarted) {
+      // This block will only execute on the first click.
+      this.isStarted = true; // Prevent re-entry into this initialization block.
+      this.sound.play(); // Start sound playback.
+      this.animate(); // Start the animation loop.
     } else {
-      this.sound.play();
+      // This runs on every click after the first.
+      if (this.sound.isPlaying) {
+        this.sound.pause();
+      } else {
+        this.sound.play();
+      }
     }
   }
 

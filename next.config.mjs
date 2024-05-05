@@ -14,7 +14,7 @@ const nextConfig = {
       use: {
         loader: "file-loader",
         options: {
-          publicPath: "/_next/static/sounds/",
+          publicPath: "/static/sounds/",
           outputPath: "static/sounds/",
           name: "[name].[ext]",
           esModule: false, // This is important for compatibility reasons
