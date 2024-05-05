@@ -3,7 +3,7 @@
 import React from "react";
 import GameSearchbar from "@/components/ui/game-ui/game-searchbar";
 import SoundVisualizer from "@/components/ui/game-ui/sound-visualizer";
-import audio from "@/assets/gameTunes/Grandma.mp3";
+import audio from "/public/static/audio/Grandma.mp3";
 
 const tune = {
   id: "342",
