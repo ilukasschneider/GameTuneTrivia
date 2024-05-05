@@ -182,12 +182,12 @@ class SoundVisualizer extends React.Component {
   }
 
   async onClick() {
+    this.animate(); // Start the animation loop.
     // Modified to handle initial start and subsequent play/pause actions.
     if (!this.isStarted) {
       // This block will only execute on the first click.
       this.isStarted = true; // Prevent re-entry into this initialization block.
-      await this.sound.play(); // Start sound playback.
-      this.animate(); // Start the animation loop.
+      this.sound.play(); // Start sound playback.
     } else {
       // This runs on every click after the first.
       if (this.sound.isPlaying) {
@@ -212,13 +212,18 @@ class SoundVisualizer extends React.Component {
   render() {
     // Render the component's HTML structure.
     return (
-      <div
-        style={{ cursor: "pointer" }} // CSS Styling to change the cursor to a pointer
-        className="place-content-center grid gap-3"
-        ref={(ref) => (this.mount = ref)}
-        onClick={this.onClick.bind(this)}
-        onWindowResize={this.onWindowResize.bind(this)}
-      />
+      <>
+        <div
+          style={{ cursor: "pointer" }} // CSS Styling to change the cursor to a pointer
+          className="place-content-center grid gap-3"
+          ref={(ref) => (this.mount = ref)}
+          onClick={this.onClick.bind(this)}
+          onWindowResize={this.onWindowResize.bind(this)}
+        />
+        <div>
+          <audio src={this.props.audio} controls />
+        </div>
+      </>
     );
   }
 }
