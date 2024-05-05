@@ -92,7 +92,7 @@ class SoundVisualizer extends React.Component {
     const plane = new THREE.Mesh(
       planeGeometry,
       new THREE.MeshBasicMaterial({
-        color: 0xcb1431, // Black color
+        color: 0xf5f5f5, // Black color
         wireframe: false, // No wireframe
         transparent: true, // Not transparent
       }),
@@ -117,7 +117,7 @@ class SoundVisualizer extends React.Component {
 
     // Create a material for the line with some transparency.
     const lineMat = new THREE.LineBasicMaterial({
-      color: 0xcb3c31,
+      color: 0x1a1a1a,
       transparent: false,
       opacity: 0.8,
     });
