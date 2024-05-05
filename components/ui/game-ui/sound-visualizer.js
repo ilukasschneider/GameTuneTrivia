@@ -45,7 +45,7 @@ class SoundVisualizer extends React.Component {
     const sound = new THREE.Audio(listener);
     // Load a sound and set it as the Audio object's buffer.
     const audioLoader = new THREE.AudioLoader();
-    await audioLoader.load(this.props.audio, function (buffer) {
+    audioLoader.load(this.props.audio, function (buffer) {
       sound.setBuffer(buffer); // Set the buffer to the loaded audio data.
       sound.setLoop(true); // Enable looping of the audio.
       sound.setVolume(0.6);
@@ -181,12 +181,12 @@ class SoundVisualizer extends React.Component {
     }
   }
 
-  onClick() {
+  async onClick() {
     // Modified to handle initial start and subsequent play/pause actions.
     if (!this.isStarted) {
       // This block will only execute on the first click.
       this.isStarted = true; // Prevent re-entry into this initialization block.
-      this.sound.play(); // Start sound playback.
+      await this.sound.play(); // Start sound playback.
       this.animate(); // Start the animation loop.
     } else {
       // This runs on every click after the first.
