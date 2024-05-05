@@ -18,7 +18,7 @@ const nextConfig = {
           // Use the string identifier for the loader instead of importing it
           loader: "url-loader",
           options: {
-            limit: config.inlineImageLimit,
+            limit: false,
             fallback: "file-loader", // Specify the fallback loader as a string
             publicPath: `${config.assetPrefix || ""}/_next/static/images/`,
             outputPath: `${isServer ? "../" : ""}static/images/`,
