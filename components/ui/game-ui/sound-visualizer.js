@@ -61,6 +61,9 @@ class SoundVisualizer extends React.Component {
 
     // Timestamp for controlling the animation rate.
     this.last = 0;
+    // Event listeners for resizing the window and clicking.
+    window.addEventListener("resize", this.onWindowResize.bind(this), false);
+    this.mount.addEventListener("click", this.onClick.bind(this), false);
   }
 
   animate(now) {
@@ -211,7 +214,7 @@ class SoundVisualizer extends React.Component {
     return (
       <div
         style={{ cursor: "pointer" }} // CSS Styling to change the cursor to a pointer
-        className="justify-items-center grid gap-3"
+        className="place-content-center grid gap-3"
         ref={(ref) => (this.mount = ref)}
         onClick={this.onClick.bind(this)}
         onWindowResize={this.onWindowResize.bind(this)}

@@ -35,19 +35,19 @@ export default function GameSearchbar() {
 
   return (
     <>
-      <div className="className=outline-8 outline-white justify-items-center grid gap-3 p-6 m-5 ">
+      <div className="outline-8 outline-white place-content-center  grid gap-3 p-6 m-5 ">
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
               variant="outline"
               role="combobox"
               aria-expanded={open}
-              className="w-[400px] justify-between"
+              className="w-[300px] justify-between"
             >
               {value
                 ? allGames.find((game) => game.name === value)?.name
                 : "Select a game..."}
-              <ChevronsUpDown className=" h-4 w-4 shrink-0 opacity-50" />
+              <ChevronsUpDown className=" h-4 w-4 opacity-50" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-[400px] p-0">
