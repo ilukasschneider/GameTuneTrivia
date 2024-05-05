@@ -4,7 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class SoundVisualizer extends React.Component {
-  componentDidMount() {
+  async componentDidMount() {
     // Initialize the scene where all objects, cameras, and lights live.
     this.scene = new THREE.Scene();
     // Set up an orthographic camera with a specific view frustum configuration.
@@ -45,7 +45,7 @@ class SoundVisualizer extends React.Component {
     const sound = new THREE.Audio(listener);
     // Load a sound and set it as the Audio object's buffer.
     const audioLoader = new THREE.AudioLoader();
-    audioLoader.load(this.props.audio, function (buffer) {
+    await audioLoader.load(this.props.audio, function (buffer) {
       sound.setBuffer(buffer); // Set the buffer to the loaded audio data.
       sound.setLoop(true); // Enable looping of the audio.
       sound.setVolume(0.6);
