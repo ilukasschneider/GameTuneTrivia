@@ -17,6 +17,7 @@ export default function Tune() {
   return (
     <>
       <SoundVisualizer audio={audio} />
+      <audio src={audio} controls />
       <GameSearchbar />
     </>
   );

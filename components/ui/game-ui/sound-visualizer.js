@@ -4,7 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class SoundVisualizer extends React.Component {
-  async componentDidMount() {
+  componentDidMount() {
     // Initialize the scene where all objects, cameras, and lights live.
     this.scene = new THREE.Scene();
     // Set up an orthographic camera with a specific view frustum configuration.
