@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
 import * as THREE from "three";
+import React from "react";
 import PropTypes from "prop-types";
+
 class SoundVisualizer extends React.Component {
   componentDidMount() {
-    // Basic THREE.js scene and render setup
+    console.log("Component did mount - Initializing scene");
     this.scene = new THREE.Scene();
     this.camera = new THREE.OrthographicCamera(
       -550,
@@ -17,15 +19,18 @@ class SoundVisualizer extends React.Component {
     this.camera.lookAt(400, 0, 0);
 
     this.dimension = Math.min(
-      window.innerHeight / 1.5,
+      window.innerHeight / 1.5 - 50,
       window.innerWidth / 1.5,
     );
 
-    this.renderer = new THREE.WebGLRenderer();
+    this.renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+    });
     this.renderer.setSize(this.dimension, this.dimension);
+
     this.mount.appendChild(this.renderer.domElement);
 
-    // THREE.js audio and sound setup
     const listener = new THREE.AudioListener();
     this.camera.add(listener);
     const sound = new THREE.Audio(listener);
@@ -36,17 +41,17 @@ class SoundVisualizer extends React.Component {
       sound.setVolume(0.6);
     });
     this.sound = sound;
+    console.log("Sound initialized", this.sound);
     this.analyser = new THREE.AudioAnalyser(sound, 128);
 
-    // Line setup
     this.lines = new THREE.Group();
     this.scene.add(this.lines);
 
     this.last = 0;
-
     window.addEventListener("resize", this.onWindowResize.bind(this), false);
     this.mount.addEventListener("click", this.onClick.bind(this), false);
 
+    console.log("Starting animation loop");
     this.animate();
   }
 
@@ -54,7 +59,7 @@ class SoundVisualizer extends React.Component {
     this.frameId = requestAnimationFrame(this.animate.bind(this));
     this.renderer.render(this.scene, this.camera);
 
-    if (!this.last || now - this.last >= 5) {
+    if (!this.last || now - this.last >= 1) {
       this.last = now;
       const data = this.analyser.getFrequencyData();
       this.moveLines();
@@ -63,14 +68,14 @@ class SoundVisualizer extends React.Component {
   }
 
   addLine(fftValues) {
-    const planeGeometry = new THREE.PlaneGeometry(200 - 1, 1, 200 - 1, 1);
+    const planeGeometry = new THREE.PlaneGeometry(800 - 1, 1, 200 - 1, 1);
 
     const plane = new THREE.Mesh(
       planeGeometry,
       new THREE.MeshBasicMaterial({
-        color: 0x000000,
+        color: 0xf5f5f5,
         wireframe: false,
-        transparent: false,
+        transparent: true,
       }),
     );
     this.lines.add(plane);
@@ -78,7 +83,7 @@ class SoundVisualizer extends React.Component {
     const lineGeometry = new THREE.BufferGeometry();
     let lineVertices = [];
     for (let i = 0; i < 200; i++) {
-      lineVertices.push(planeGeometry.attributes.position.array[3 * i]); // share the upper points of the plane
+      lineVertices.push(planeGeometry.attributes.position.array[3 * i]);
       lineVertices.push(planeGeometry.attributes.position.array[3 * i + 1]);
       lineVertices.push(planeGeometry.attributes.position.array[3 * i + 2]);
     }
@@ -88,9 +93,9 @@ class SoundVisualizer extends React.Component {
     );
 
     const lineMat = new THREE.LineBasicMaterial({
-      color: 0xe1e1e1,
-      transparent: true,
-      opacity: 0.57,
+      color: 0x1a1a1a,
+      transparent: false,
+      opacity: 0.8,
     });
     const line = new THREE.Line(lineGeometry, lineMat);
 
@@ -103,7 +108,7 @@ class SoundVisualizer extends React.Component {
       } else if (i >= 100 && i < 161) {
         y += fftValues[i - 97];
       }
-      y = Math.pow(y, 1.2);
+      y = Math.pow(y, 1.22);
 
       plane.geometry.attributes.position.array[i * 3 + 1] = y;
       line.geometry.attributes.position.array[i * 3 + 1] = y;
@@ -120,7 +125,7 @@ class SoundVisualizer extends React.Component {
         }
       }
 
-      if (plane.geometry.attributes.position.array[2] <= -1000) {
+      if (plane.geometry.attributes.position.array[2] <= -600) {
         planesThatHaveGoneFarEnough.push(plane);
       } else {
         plane.geometry.attributes.position.needsUpdate = true;
@@ -138,14 +143,24 @@ class SoundVisualizer extends React.Component {
       );
       this.renderer.setSize(this.dimension, this.dimension);
       this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      console.log("Window resized, new dimension:", this.dimension);
     }
   }
 
-  onClick() {
-    if (this.sound.isPlaying) {
-      this.sound.pause();
-    } else {
+  async onClick() {
+    console.log("Canvas clicked");
+    if (!this.isStarted) {
+      this.isStarted = true;
       this.sound.play();
+      console.log("Sound playback started");
+    } else {
+      if (this.sound.isPlaying) {
+        this.sound.pause();
+        console.log("Sound paused");
+      } else {
+        this.sound.play();
+        console.log("Sound resumed");
+      }
     }
   }
 
@@ -155,25 +170,25 @@ class SoundVisualizer extends React.Component {
       this.sound.stop();
     }
 
-    window.removeEventListener("resize", this.onWindowResize.bind(this));
-    this.mount.removeEventListener("click", this.onClick.bind(this));
     this.mount.removeChild(this.renderer.domElement);
+    console.log("Component will unmount - Cleanup done");
   }
 
   render() {
     return (
-      <div className="place-content-center grid gap-3">
-        {/* The actaual canvas for three.js */}
+      <>
         <div
-          className="flex justify-center "
+          style={{ cursor: "pointer" }}
+          className="place-content-center grid gap-3"
           ref={(ref) => (this.mount = ref)}
           onClick={this.onClick.bind(this)}
           onWindowResize={this.onWindowResize.bind(this)}
         />
-      </div>
+      </>
     );
   }
 }
+
 SoundVisualizer.propTypes = {
   audio: PropTypes.string.isRequired,
 };
