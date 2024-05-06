@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 
 class SoundVisualizer extends React.Component {
   componentDidMount() {
-    const isStarted = false;
     console.log("Component did mount - Initializing scene");
     this.scene = new THREE.Scene();
     this.camera = new THREE.OrthographicCamera(
@@ -148,20 +147,13 @@ class SoundVisualizer extends React.Component {
     }
   }
 
-  async onClick() {
-    console.log("Canvas clicked");
-    if (!this.isStarted) {
-      this.isStarted = true;
-      this.sound.play();
-      console.log("Sound playback started");
+  onClick() {
+    if (this.sound.isPlaying) {
+      this.sound.pause();
+      console.log("Sound paused");
     } else {
-      if (this.sound.isPlaying) {
-        this.sound.pause();
-        console.log("Sound paused");
-      } else {
-        this.sound.play();
-        console.log("Sound resumed");
-      }
+      this.sound.play();
+      console.log("Sound played");
     }
   }
 
