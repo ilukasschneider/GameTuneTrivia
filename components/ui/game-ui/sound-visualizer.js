@@ -49,7 +49,6 @@ class SoundVisualizer extends React.Component {
 
     this.last = 0;
     window.addEventListener("resize", this.onWindowResize.bind(this), false);
-    this.mount.addEventListener("click", this.onClick.bind(this), false);
 
     console.log("Starting animation loop");
     this.animate();
