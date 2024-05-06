@@ -64,6 +64,8 @@ class SoundVisualizer extends React.Component {
     // Event listeners for resizing the window and clicking.
     window.addEventListener("resize", this.onWindowResize.bind(this), false);
     this.mount.addEventListener("click", this.onClick.bind(this), false);
+
+    this.animate(); // Start the animation loop.
   }
 
   animate(now) {
@@ -186,7 +188,6 @@ class SoundVisualizer extends React.Component {
     if (!this.isStarted) {
       // This block will only execute on the first click.
       this.isStarted = true; // Prevent re-entry into this initialization block.
-      this.animate(); // Start the animation loop.
       this.sound.play(); // Start sound playback.
     } else {
       // This runs on every click after the first.
@@ -220,9 +221,6 @@ class SoundVisualizer extends React.Component {
           onClick={this.onClick.bind(this)}
           onWindowResize={this.onWindowResize.bind(this)}
         />
-        <div>
-          <audio src={this.props.audio} controls />
-        </div>
       </>
     );
   }
