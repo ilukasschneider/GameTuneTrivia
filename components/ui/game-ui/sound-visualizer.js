@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 
 class SoundVisualizer extends React.Component {
   componentDidMount() {
+    const isStarted = false;
     console.log("Component did mount - Initializing scene");
     this.scene = new THREE.Scene();
     this.camera = new THREE.OrthographicCamera(
