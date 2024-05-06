@@ -182,11 +182,11 @@ class SoundVisualizer extends React.Component {
   }
 
   async onClick() {
-    this.animate(); // Start the animation loop.
     // Modified to handle initial start and subsequent play/pause actions.
     if (!this.isStarted) {
       // This block will only execute on the first click.
       this.isStarted = true; // Prevent re-entry into this initialization block.
+      this.animate(); // Start the animation loop.
       this.sound.play(); // Start sound playback.
     } else {
       // This runs on every click after the first.
