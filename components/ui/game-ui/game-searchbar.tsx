@@ -71,6 +71,7 @@ export default function GameSearchbar() {
                         src={game.coverUrl}
                         width={60}
                         height={60}
+                        unoptimized
                         alt={game.name}
                         className="h-8 w-8 mr-2 rounded-md"
                       />
