@@ -25,9 +25,8 @@ export default function Tune() {
     <>
       {/* Add a button to handle the click event */}
       {/* Conditionally render SoundVisualizer based on `showVisualizer` state */}
-      {showVisualizer && <SoundVisualizer audio={audio} />}
+      {<SoundVisualizer audio={audio} />}
       <GameSearchbar />
-      <button onClick={handleClick}>Toggle Visualizer</button>{" "}
     </>
   );
 }
