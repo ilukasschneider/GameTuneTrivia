@@ -36,7 +36,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 z-50 w-full bg-white dark:bg-background">
+    <header className="fixed top-0 z-50 w-full bg-background">
       <NavigationMenu className="sticky top-0 object-centermax-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavigationMenuList>
           <Link href="/today">
@@ -55,7 +55,7 @@ export function Navbar() {
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <a
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary to-destructive p-6 no-underline outline-none focus:shadow-md"
+                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-secondary hover:bg-accent  from-primary to-destructive p-6 no-underline outline-none focus:shadow-md"
                       href="/tune"
                     >
                       {/* Project logo */}

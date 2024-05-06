@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import GameSearchbar from "@/components/ui/game-ui/game-searchbar";
 import SoundVisualizer from "@/components/ui/game-ui/sound-visualizer";
 import audio from "/public/static/audio/Grandma.mp3";
@@ -23,9 +23,9 @@ export default function Tune() {
   };
   return (
     <>
-      {/* Add a button to handle the click event */}
-      {/* Conditionally render SoundVisualizer based on `showVisualizer` state */}
-      {<SoundVisualizer audio={audio} />}
+      <Suspense fallback={<div className="h-80" />}>
+        <SoundVisualizer audio={audio} />
+      </Suspense>
       <GameSearchbar />
     </>
   );
