@@ -51,7 +51,7 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card>
+          <Card className="bg-background border-black dark:border-white dark:group-hover:border-white hover:border-inherit">
             <CardTitle>{item.title}</CardTitle>
             {/* Display the title of the current item. */}
           </Card>
@@ -73,7 +73,7 @@ export const Card = ({
     <div
       // Dynamically generate class string with `cn`. It combines predefined styles with any className prop passed to Card.
       className={cn(
-        "rounded-2xl h-full w-full p-1 overflow-hidden bg-white border border-black/[0.2] group-hover:border-primary dark:bg-background dark:border-accent dark:group-hover:border-primary relative z-20",
+        "rounded-2xl h-full w-full p-1 overflow-hidden bg-white border border-black group-hover:border-primary dark:bg-background dark:border-accent  relative z-20",
         className,
       )}
     >
