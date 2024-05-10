@@ -1,5 +1,4 @@
-import data from "@/lib/igdb/igdb-data.json";
-import ColorThief from "colorthief";
+import data from "@/lib/db/game-data.json";
 
 export interface Game {
   id: string;

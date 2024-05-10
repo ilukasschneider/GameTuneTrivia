@@ -1,0 +1,58 @@
+[
+  {
+    "id": "7a3dfe3b-a548-4c69-a6f7-e7424e985f86",
+    "title": "Dearly Beloved - Kingdom Hearts",
+    "folder_path": "7a3dfe3b-a548-4c69-a6f7-e7424e985f86",
+    "url": "https://www.youtube.com/watch?v=gUQuBBBzx-I",
+    "game_ids": [1219, 1220, 1221, 2933]
+  },
+  {
+    "id": "a3a5aae2-a9af-43e5-840e-7282075e3cc2",
+    "title": "Riding (Night) - The Legend of Zelda: Breath of the Wild",
+    "folder_path": "a3a5aae2-a9af-43e5-840e-7282075e3cc2",
+    "url": "https://www.youtube.com/watch?v=f2LgPr9xtAo",
+    "game_ids": [7346]
+  },
+  {
+    "id": "782ad8b4-3889-47a7-8064-19b831b4f097",
+    "title": "Gerudo Valley - The Legend of Zelda: Ocarina Of Time",
+    "folder_path": "782ad8b4-3889-47a7-8064-19b831b4f097",
+    "url": "https://www.youtube.com/watch?v=0hEYvdMoF2g",
+    "game_ids": [1029, 1030, 1041, 1033, 1034, 1035, 1036, 1037, 1038]
+  },
+  {
+    "id": "d106359c-7c4f-49bc-8bbe-e3443e5c051a",
+    "title": "Halo 3 - Rain (Deference for Darkness)",
+    "folder_path": "d106359c-7c4f-49bc-8bbe-e3443e5c051a",
+    "url": "https://www.youtube.com/watch?v=yWh9l8RSkPk",
+    "game_ids": [989, 987]
+  },
+  {
+    "id": "f67dd0fb-0362-4c1f-8720-a1bf32952055",
+    "title": "Yoshi's Island - Athletic",
+    "folder_path": "f67dd0fb-0362-4c1f-8720-a1bf32952055",
+    "url": "https://www.youtube.com/watch?v=oKJ2EZnnZRE",
+    "game_ids": [1073]
+  },
+  {
+    "id": "f652bfb7-897b-45ef-a12e-da89d46bc52f",
+    "title": "Super Mario Odyssey - Tostarena: Ruins",
+    "folder_path": "f652bfb7-897b-45ef-a12e-da89d46bc52f",
+    "url": "https://www.youtube.com/watch?v=ROTS0Lm2Ml4",
+    "game_ids": [26758]
+  },
+  {
+    "id": "17837b33-d394-4a39-903e-ffb70adc6d88",
+    "title": "Luigi's Mansion - Dark Moon Ringtone",
+    "folder_path": "17837b33-d394-4a39-903e-ffb70adc6d88",
+    "url": "https://www.youtube.com/watch?v=MlyejkQCvJg",
+    "game_ids": [2485, 109455]
+  },
+  {
+    "id": "5f9ad10c-c170-4ba4-a4f3-4b37c52a982f",
+    "title": "Donkey Kong - Rap",
+    "folder_path": "5f9ad10c-c170-4ba4-a4f3-4b37c52a982f",
+    "url": "https://www.youtube.com/watch?v=RcP91tQ4ZSM",
+    "game_ids": [1096, 1100, 2923, 1094, 1092, 1090]
+  }
+]

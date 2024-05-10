@@ -35,5 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# igdb loading
-lib/igdb/load-igdb-data.py
+# hide all python-scripts
+*.py
