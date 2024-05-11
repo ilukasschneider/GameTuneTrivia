@@ -1,6 +1,6 @@
 "use client";
 import { HoverEffect } from "@/components/ui/archive/card-hover-effect";
-import link from "@/lib/tune-data.json";
+import link from "@/lib/trivia-linking.json";
 
 export default function Page() {
   return (

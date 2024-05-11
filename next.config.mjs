@@ -11,7 +11,7 @@ const nextConfig = {
   webpack(config, { isServer }) {
     // Push a new rule for audio files
     config.module.rules.push({
-      test: /\.(ogg|mp3|wav|mpe?g)$/i,
+      test: /\.(mp3|wav|mpe?g)$/i,
       exclude: config.exclude,
       use: [
         {
@@ -28,6 +28,12 @@ const nextConfig = {
         },
       ],
     });
+    config.resolve.extensionAlias = {
+      // Your existing alias configurations
+      // Adding '.mp3' alongside other formats
+      ".mp3": [".mp3"], // Technically, for .mp3 files, this is straightforward, but you might want to consider a broader audio setup
+      // Any other extension aliases can go below
+    };
 
     return config;
   },

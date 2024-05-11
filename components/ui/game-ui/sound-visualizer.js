@@ -51,11 +51,11 @@ class SoundVisualizer extends React.Component {
     const audioLoader = new THREE.AudioLoader();
     audioLoader.load(this.props.audio, function (buffer) {
       sound.setBuffer(buffer);
-      sound.setLoop(true);
+      sound.setLoop(false);
       sound.setVolume(0.6);
     });
     this.sound = sound;
-    this.sound.duration = this.props.duration || 0;
+
     // Log to indicate the sound has been initialized
     console.log("Sound initialized", this.sound);
 
@@ -234,6 +234,5 @@ class SoundVisualizer extends React.Component {
 // Define prop types for the SoundVisualizer component
 SoundVisualizer.propTypes = {
   audio: PropTypes.string.isRequired, // The audio prop is required and must be a string
-  duration: PropTypes.number, // The duration prop is optional and must be a number
 };
 export default SoundVisualizer;
