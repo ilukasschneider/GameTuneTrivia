@@ -5,13 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getTuneData } from "@/lib/db/db-utils";
 import { Suspense, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import YouTube from "react-youtube";
-
-const opts = {
-  playerVars: {
-    autoplay: 1,
-  },
-};
+import { YTPlayer } from "@/components/ui/audio-player/yt-player";
 
 export default function Tune({ params }: { params: { id: string } }) {
   // State for tracking the audio time based on user progression
@@ -78,13 +72,7 @@ export default function Tune({ params }: { params: { id: string } }) {
             <SoundVisualizer audio={audio} length={parseInt(audioTime)} />
           </Suspense>
         ) : (
-          <div className="w-full h-64 sm:h-72 md:h-96 lg:h-[500px] p-4">
-            <YouTube
-              className="w-full h-full"
-              videoId={tuneData.video_id}
-              opts={opts}
-            />
-          </div>
+          <YTPlayer video_id={tuneData.video_id} />
         )}
       </div>
 
