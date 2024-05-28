@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { useEffect, useState } from "react";
-import { Game, getAllGames } from "./igdb-db-utils"; // Importing utility functions for game data fetching
+import { Game, getAllGames, getGameIDByName } from "@/lib/db/db-utils"; // Import utility functions for game data fetching
 
-import { Button } from "@/components/ui/button"; // Button component for UI
-// Importing various components for building the command interface
+import { Button } from "@/components/ui/button"; // Import Button component for UI
+// Import components for building the command interface
 import {
   Command,
   CommandEmpty,
@@ -16,35 +16,47 @@ import {
 
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 
-import { useMediaQuery } from "@react-hook/media-query"; // Hook for media query
+import { useMediaQuery } from "@react-hook/media-query"; // Hook for responsive design
 
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"; // Components for creating a popover UI
-import Image from "next/image"; // Next.js Image component for optimized image rendering
+} from "@/components/ui/popover"; // Components for popover UI
+import Image from "next/image"; // Next.js optimized image component
 
-export default function GameSearchbar() {
-  // State for storing the list of all games fetched from the API
+export default function GameSearchbar({ setGameID }: any) {
+  // State for the list of games
   const [allGames, setAllGames] = useState<Game[]>([]);
-  // State to control the visibility of the popover
+  // State for popover visibility
   const [open, setOpen] = useState(false);
-  // State for storing the currently selected game's name
+  // State for selected game's name
   const [value, setValue] = useState("");
 
   useEffect(() => {
-    // Function to load games from the API
+    // Async function to fetch games
     const loadGames = async () => {
-      const gamesData = await getAllGames(); // Fetching games data
-      setAllGames(gamesData); // Setting the fetched data to state
+      const gamesData = getAllGames(); // Fetch games data
+      setAllGames(gamesData); // Update state with fetched data
     };
-    loadGames(); // Invoking the loadGames function to fetch games data
-  }, []); // Empty dependency array means this effect runs once on mount
+    loadGames();
+  }, []); // Effect runs once on mount
 
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+  // Adding the named function declaration for handling selection
+  function handleSelect(currentValue: string) {
+    // This follows your request for a "function" not a "const"
+    setValue(currentValue === value ? "" : currentValue);
+    if (isDesktop) {
+      // You might want to close the popover only on desktop, as your original logic suggests
+      setOpen(false); // Closing the popover for desktop layout
+    }
+    setGameID(getGameIDByName(currentValue));
+  }
+
+  const isDesktop = useMediaQuery("(min-width: 768px)"); // Check for desktop screen size
 
   if (!isDesktop) {
+    // Mobile layout with Drawer
     return (
       <Drawer>
         <DrawerTrigger asChild>
@@ -55,7 +67,7 @@ export default function GameSearchbar() {
             className="lg:w-[400px] md:w-[300px] sm:w-[200px] justify-between overflow-x-hidden"
           >
             {value
-              ? allGames.find((game) => game.name === value)?.name // Displaying the selected game's name
+              ? allGames.find((game) => game.name === value)?.name // Display selected game name
               : "Select a game..."}{" "}
           </Button>
         </DrawerTrigger>
@@ -63,25 +75,23 @@ export default function GameSearchbar() {
           <Command>
             <CommandInput placeholder="Search games..." className="pr-6" />
             {allGames.length === 0 && (
-              <CommandEmpty>No games found.</CommandEmpty> // Displayed when no games data is available
+              <CommandEmpty>No games found.</CommandEmpty> // Display if no games are found
             )}
             <CommandList className="scrollbar-none">
               <CommandGroup>
                 {allGames.map((game) => (
                   <CommandItem
-                    key={game.id} // Unique key for each item
+                    key={game.id} // Unique key for React list
                     value={game.name}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue); // Updating the selected value or clearing it if the same value is selected
-                    }}
+                    onSelect={handleSelect}
                   >
                     <Image
                       src={game.coverUrl} // Game cover image URL
                       width={60}
                       height={60}
-                      unoptimized // Disabling optimization for demonstration purposes
-                      alt={game.name} // Alt text for the image
-                      className="h-8 w-8 mr-2 rounded-md" // Styling for the image
+                      unoptimized // Disable optimization
+                      alt={game.name} // Alt text for image
+                      className="h-8 w-8 mr-2 rounded-md" // Image styling
                     />
                     {game.name}
                   </CommandItem>
@@ -94,6 +104,7 @@ export default function GameSearchbar() {
     );
   }
 
+  // Desktop layout with Popover
   return (
     <>
       <Popover open={open} onOpenChange={setOpen}>
@@ -105,7 +116,7 @@ export default function GameSearchbar() {
             className="lg:w-[400px] md:w-[300px] sm:w-[200px] justify-between overflow-x-hidden"
           >
             {value
-              ? allGames.find((game) => game.name === value)?.name // Displaying the selected game's name
+              ? allGames.find((game) => game.name === value)?.name // Display selected game name
               : "Select a game..."}{" "}
           </Button>
         </PopoverTrigger>
@@ -113,26 +124,23 @@ export default function GameSearchbar() {
           <Command>
             <CommandInput placeholder="Search games..." className="pr-6" />
             {allGames.length === 0 && (
-              <CommandEmpty>No games found.</CommandEmpty> // Displayed when no games data is available
+              <CommandEmpty>No games found.</CommandEmpty> // Display if no games are found
             )}
             <CommandList className="scrollbar-none">
               <CommandGroup>
                 {allGames.map((game) => (
                   <CommandItem
-                    key={game.id} // Unique key for each item
+                    key={game.id} // Unique key for React list
                     value={game.name}
-                    onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue); // Updating the selected value or clearing it if the same value is selected
-                      setOpen(false); // Closing the popover after selection
-                    }}
+                    onSelect={handleSelect}
                   >
                     <Image
                       src={game.coverUrl} // Game cover image URL
                       width={60}
                       height={60}
-                      unoptimized // Disabling optimization for demonstration purposes
-                      alt={game.name} // Alt text for the image
-                      className="h-8 w-8 mr-2 rounded-md" // Styling for the image
+                      unoptimized // Disable optimization
+                      alt={game.name} // Alt text for image
+                      className="h-8 w-8 mr-2 rounded-md" // Image styling
                     />
                     {game.name}
                   </CommandItem>

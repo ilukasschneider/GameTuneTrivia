@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 
 class SoundVisualizer extends React.Component {
   componentDidMount() {
+    console.log("time:", this.props.length);
     // Log to indicate the component has been mounted successfully
     console.log("Component did mount - Initializing scene");
 
@@ -55,6 +56,7 @@ class SoundVisualizer extends React.Component {
       sound.setVolume(0.6);
     });
     this.sound = sound;
+    this.sound.duration = this.props.length;
 
     // Log to indicate the sound has been initialized
     console.log("Sound initialized", this.sound);
@@ -78,6 +80,7 @@ class SoundVisualizer extends React.Component {
   }
 
   animate(now) {
+    this.sound.duration = this.props.length;
     this.theme = localStorage.getItem("theme");
     // Request the next animation frame
     this.frameId = requestAnimationFrame(this.animate.bind(this));
@@ -93,6 +96,26 @@ class SoundVisualizer extends React.Component {
       this.moveLines();
       // Add a new line to the scene based on the frequency data
       this.addLine(data);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.length !== prevProps.length) {
+      console.log(
+        `Time updated from ${prevProps.length} to ${this.props.length}`,
+      );
+      // Update relevant properties or states based on the new length
+      this.sound.duration = this.props.length;
+      // Perform cleanup when the component is about to unmount
+      cancelAnimationFrame(this.frameId);
+      if (this.sound && this.sound.isPlaying) {
+        this.sound.stop();
+      }
+
+      // Remove the renderer's canvas element from the DOM
+      this.mount.removeChild(this.renderer.domElement);
+      console.log("Component will unmount - Cleanup done");
+      this.componentDidMount();
     }
   }
 
@@ -234,5 +257,6 @@ class SoundVisualizer extends React.Component {
 // Define prop types for the SoundVisualizer component
 SoundVisualizer.propTypes = {
   audio: PropTypes.string.isRequired, // The audio prop is required and must be a string
+  length: PropTypes.number.isRequired, // The duration prop is required and must be a number
 };
 export default SoundVisualizer;
