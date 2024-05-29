@@ -1,20 +1,21 @@
 .video-container {
-    width: 40vw;
-    height: 80vh;
+    width: 28vw;
+    height: 19vh;
     overflow: hidden;
     position: relative;
 }
+
 .video-container iframe {
-    position: relative;
-    top: 100;
+    position: absolute;
+    top: 0;
     left: 20;
-    width: 100%;
+    width: 20%;
     height: 100%;
 }
 
 .video-container iframe {
     position: absolute;
-    top: -60px;
+    top: 0px;
     width: 100%;
-    height: calc(100% + 120px);
+    height: 100%;
 }
