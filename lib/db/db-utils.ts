@@ -76,6 +76,7 @@ export function getTuneData(id: string) {
       title: "",
       folder_path: "",
       url: "",
+      video_id: "",
       start_time: 0,
       game_ids: [],
     };
