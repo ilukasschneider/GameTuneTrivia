@@ -4,28 +4,26 @@ import SoundVisualizer from "@/components/ui/game-ui/sound-visualizer";
 import { Button } from "@/components/ui/button";
 import { getTuneData } from "@/lib/db/db-utils";
 import { Suspense, useEffect, useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { YTPlayer } from "@/components/ui/audio-player/yt-player";
 
 export default function Tune({ params }: { params: { id: string } }) {
   // State to track the user's progress
   const [progess, setProgress] = useState(
     typeof window !== "undefined"
-      ? localStorage.getItem(`levelProgression: ${params.id}`) || "0"
-      : "0",
+      ? localStorage.getItem(`levelProgression: ${params.id}`) || "5"
+      : "5",
   );
-
-  // State to track the current audio time
-  const [audioTime, setAudioTime] = useState(updateAudioTime());
 
   // Effect to initialize the progress in local storage
   useEffect(() => {
-    localStorage.setItem(`levelProgression: ${params.id}`, "0");
+    localStorage.setItem(`levelProgression: ${params.id}`, "5");
   }, []);
 
   // Effect to update the progress in local storage whenever it changes
   useEffect(() => {
     localStorage.setItem(`levelProgression: ${params.id}`, progess);
+
+    console.log("PROGESS-LVEVL", progess);
   }, [progess, params.id]);
 
   // Fetching the tune data based on the id
@@ -34,45 +32,33 @@ export default function Tune({ params }: { params: { id: string } }) {
   const audio = `/static/audio/${tuneData.id}/audio.mp3`;
   const [selectedGameID, setSelectedGameID] = useState(-1);
 
-  // Function to update the audio time based on the progress
-  function updateAudioTime(): string {
-    const progressionMap: { [key: string]: string } = {
-      "0": "5",
-      "1": "10",
-      "2": "15",
-      "3": "15",
-      "4": "15",
-    };
-
-    return progressionMap[progess] || "5";
-  }
-
   // Function to check the user's guess
   function checkGuess() {
-    const currentProgression = progess;
-    if (selectedGameID != -1) {
-      if (
-        correctGameIDs.includes(selectedGameID) &&
-        currentProgression !== "3"
-      ) {
-        setProgress("4");
+    if (selectedGameID !== -1) {
+      if (correctGameIDs.includes(selectedGameID) && progess !== "failed") {
+        setProgress("passed");
       } else {
-        const nextProgression = Math.min(
-          parseInt(currentProgression) + 1,
-          3,
-        ).toString();
-        setProgress(currentProgression === "4" ? "4" : nextProgression);
+        switch (progess) {
+          case "5":
+            setProgress("10");
+            break;
+          case "10":
+            setProgress("15");
+            break;
+          case "15":
+            setProgress("failed");
+            break;
+        }
       }
-      setAudioTime(updateAudioTime());
     }
   }
 
   return (
     <>
       <div className="place-content-center grid gap-3">
-        {progess !== "3" && progess !== "4" ? (
+        {progess !== "passed" && progess !== "failed" ? (
           <Suspense fallback={<div>Loading...</div>}>
-            <SoundVisualizer audio={audio} length={parseInt(audioTime)} />
+            <SoundVisualizer audio={audio} length={parseInt(progess)} />
           </Suspense>
         ) : (
           <YTPlayer video_id={tuneData.video_id} />
