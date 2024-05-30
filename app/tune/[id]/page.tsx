@@ -5,10 +5,11 @@ import { Button } from "@/components/ui/button";
 import { getTuneData } from "@/lib/db/db-utils";
 import { Suspense, useEffect, useState } from "react";
 import { YTPlayer } from "@/components/ui/audio-player/yt-player";
+import { Progress } from "@/components/ui/progress";
 
 export default function Tune({ params }: { params: { id: string } }) {
   // State to track the user's progress
-  const [progess, setProgress] = useState(
+  const [progress, setProgress] = useState(
     typeof window !== "undefined"
       ? localStorage.getItem(`levelProgression: ${params.id}`) || "5"
       : "5",
@@ -21,10 +22,8 @@ export default function Tune({ params }: { params: { id: string } }) {
 
   // Effect to update the progress in local storage whenever it changes
   useEffect(() => {
-    localStorage.setItem(`levelProgression: ${params.id}`, progess);
-
-    console.log("PROGESS-LVEVL", progess);
-  }, [progess, params.id]);
+    localStorage.setItem(`levelProgression: ${params.id}`, progress);
+  }, [progress, params.id]);
 
   // Fetching the tune data based on the id
   const tuneData = getTuneData(params.id)!;
@@ -35,10 +34,10 @@ export default function Tune({ params }: { params: { id: string } }) {
   // Function to check the user's guess
   function checkGuess() {
     if (selectedGameID !== -1) {
-      if (correctGameIDs.includes(selectedGameID) && progess !== "failed") {
+      if (correctGameIDs.includes(selectedGameID) && progress !== "failed") {
         setProgress("passed");
       } else {
-        switch (progess) {
+        switch (progress) {
           case "5":
             setProgress("10");
             break;
@@ -51,14 +50,15 @@ export default function Tune({ params }: { params: { id: string } }) {
         }
       }
     }
+    setSelectedGameID(-1); // Reset the selected game id
   }
 
   return (
     <>
       <div className="place-content-center grid gap-3">
-        {progess !== "passed" && progess !== "failed" ? (
+        {progress !== "passed" && progress !== "failed" ? (
           <Suspense fallback={<div>Loading...</div>}>
-            <SoundVisualizer audio={audio} length={parseInt(progess)} />
+            <SoundVisualizer audio={audio} length={parseInt(progress)} />
           </Suspense>
         ) : (
           <YTPlayer video_id={tuneData.video_id} />
@@ -67,9 +67,17 @@ export default function Tune({ params }: { params: { id: string } }) {
 
       <div className="place-content-center grid gap-3">
         <div className="flex justify-center gap-10 mb-8 -mt-4">
-          <div className="w-8 h-8 bg-secondary rounded-full" />
-          <div className="w-8 h-8 bg-secondary rounded-full" />
-          <div className="w-8 h-8 bg-secondary rounded-full" />
+          {progress === "5" ? (
+            <Progress className="[&>*]:bg-secondary" value={0} />
+          ) : progress === "10" ? (
+            <Progress className="[&>*]:bg-red-500" value={33} />
+          ) : progress === "15" ? (
+            <Progress className="[&>*]:bg-red-500" value={66} />
+          ) : progress === "failed" ? (
+            <Progress className="[&>*]:bg-red-500" value={100} />
+          ) : progress === "passed" ? (
+            <Progress className="[&>*]:bg-green-500" value={100} />
+          ) : null}
         </div>
         <GameSearchbar setGameID={setSelectedGameID} />
         <Button variant={"secondary"} onClick={checkGuess}>
