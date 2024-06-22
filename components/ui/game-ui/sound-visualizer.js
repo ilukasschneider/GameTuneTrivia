@@ -152,7 +152,7 @@ class SoundVisualizer extends React.Component {
 
     // Create a material for the line
     const lineMat = new THREE.LineBasicMaterial({
-      color: this.theme == "light" ? 0x242a27 : 0xc9d1cd,
+      color: this.theme == "light" ? 0xc9d1cd : 0x242a27,
       transparent: false, // Line is not transparent
       opacity: 1, // Set the opacity of the line
     });
@@ -182,7 +182,7 @@ class SoundVisualizer extends React.Component {
     this.lines.children.forEach((plane) => {
       // Move the plane and its line along the z-axis
       for (let i = 0; i < 400; i++) {
-        plane.geometry.attributes.position.array[i * 3 + 2] -= 1;
+        plane.geometry.attributes.position.array[i * 3 + 20] -= 1;
         if (i < 200) {
           plane.children[0].geometry.attributes.position.array[i * 3 + 2] -= 1;
         }
