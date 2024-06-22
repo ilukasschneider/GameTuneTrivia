@@ -117,7 +117,11 @@ export default function Tune({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <ConfettiCanvas active={true} fadingMode="OFF" stopAfterMs={5000} />
+      <ConfettiCanvas
+        active={circleColors.includes("bg-green-500")}
+        fadingMode="OFF"
+        stopAfterMs={10000}
+      />
 
       <div className="place-content-center grid gap-3">
         {progress !== "passed" && progress !== "failed" ? (
