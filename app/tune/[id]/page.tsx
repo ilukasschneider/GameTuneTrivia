@@ -24,10 +24,12 @@ export default function Tune({ params }: { params: { id: string } }) {
 
   // State to track the colors of the circles indicating guess status
   const [circleColors, setCircleColors] = useState<string[]>([
-    "bg-gray-500",
-    "bg-gray-500",
-    "bg-gray-500",
+    "bg-accent",
+    "bg-accent",
+    "bg-accent",
   ]);
+
+  const [confetti, setConfetti] = useState<boolean>(false);
 
   // Effect to initialize localStorage values if they are not already set
   useEffect(() => {
@@ -49,25 +51,28 @@ export default function Tune({ params }: { params: { id: string } }) {
     // Update circle colors based on the guess history
     switch (guessHistory) {
       case "wrong guess":
-        setCircleColors(["bg-red-500", "bg-gray-500", "bg-gray-500"]);
+        setCircleColors(["bg-red-500", "bg-accent", "bg-accent"]);
         break;
       case "correct guess":
-        setCircleColors(["bg-green-500", "bg-gray-500", "bg-gray-500"]);
+        setCircleColors(["bg-green-500", "bg-accent", "bg-accent"]);
+        setConfetti(true);
         break;
       case "wrong guess,wrong guess":
-        setCircleColors(["bg-red-500", "bg-red-500", "bg-gray-500"]);
+        setCircleColors(["bg-red-500", "bg-red-500", "bg-accent"]);
         break;
       case "wrong guess,correct guess":
-        setCircleColors(["bg-red-500", "bg-green-500", "bg-gray-500"]);
+        setCircleColors(["bg-red-500", "bg-green-500", "bg-accent"]);
+        setConfetti(true);
         break;
       case "wrong guess,wrong guess,wrong guess":
         setCircleColors(["bg-red-500", "bg-red-500", "bg-red-500"]);
         break;
       case "wrong guess,wrong guess,correct guess":
         setCircleColors(["bg-red-500", "bg-red-500", "bg-green-500"]);
+        setConfetti(true);
         break;
       default:
-        setCircleColors(["bg-gray-500", "bg-gray-500", "bg-gray-500"]);
+        setCircleColors(["bg-accent", "bg-accent", "bg-accent"]);
         break;
     }
   }, [progress, params.id, guessHistory]);
@@ -117,27 +122,25 @@ export default function Tune({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <ConfettiCanvas
-        active={circleColors.includes("bg-green-500")}
-        fadingMode="OFF"
-        stopAfterMs={10000}
-      />
+      <ConfettiCanvas active={confetti} fadingMode="OFF" stopAfterMs={10000} />
 
       <div className="place-content-center grid gap-3">
         {progress !== "passed" && progress !== "failed" ? (
           <Suspense fallback={<div>Loading...</div>}>
-            <SoundVisualizer audio={audio} length={parseInt(progress)} />
+            <div className="relative lg:-translate-y-40 sm:pt-10">
+              <SoundVisualizer audio={audio} length={parseInt(progress)} />
+            </div>
           </Suspense>
         ) : (
           <YTPlayer video_id={tuneData.video_id} />
         )}
       </div>
 
-      <div className="place-content-center grid gap-3">
-        <div className="flex justify-center gap-10 mb-8 -mt-4">
-          <div className={`h-8 w-8 rounded-full ${circleColors[0]}`} />
-          <div className={`h-8 w-8 rounded-full ${circleColors[1]}`} />
-          <div className={`h-8 w-8 rounded-full ${circleColors[2]}`} />
+      <div className="place-content-center grid gap-3 relative  sm:pt-10">
+        <div className="flex justify-center gap-5 lg:gap-10 mb-8">
+          <div className={`h-8 w-8 rounded-lg ${circleColors[0]}`} />
+          <div className={`h-8 w-8 rounded-lg ${circleColors[1]}`} />
+          <div className={`h-8 w-8 rounded-lg ${circleColors[2]}`} />
         </div>
         <GameSearchbar setGameID={setSelectedGameID} />
         <Button variant={"secondary"} onClick={checkGuess}>

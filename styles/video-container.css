@@ -1,21 +1,31 @@
+/* Default container size */
 .video-container {
     width: 28vw;
-    height: 46vh;
+    height: 28vw; /* Make the height equal to the width to form a square */
     overflow: hidden;
     position: relative;
 }
 
+/* Inner iframe styling */
 .video-container iframe {
     position: absolute;
     top: 0;
-    left: 20;
-    width: 20%;
+    width: 100%;
     height: 100%;
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 100%;
+/* Media query for screens smaller than 1024px */
+@media (max-width: 1024px) {
+    .video-container {
+        width: 40vw; /* Adjusting to keep it square, smaller size for mobile devices */
+        height: 40vw; /* Make the height equal to the width to form a square */
+    }
+
+    /* Additional media query for very small screens like smartphones */
+    @media (max-width: 600px) {
+        .video-container {
+            width: 40vw; /* Even larger to accommodate very narrow screens */
+            height: 40vw; /* Again, ensuring it's square */
+        }
+    }
 }

@@ -46,10 +46,8 @@ export default function GameSearchbar({ setGameID }: any) {
   function handleSelect(currentValue: string) {
     // This follows your request for a "function" not a "const"
     setValue(currentValue === value ? "" : currentValue);
-    if (isDesktop) {
-      // You might want to close the popover only on desktop, as your original logic suggests
-      setOpen(false); // Closing the popover for desktop layout
-    }
+
+    setOpen(false); // Closing the popover for desktop layout
     setGameID(getGameIDByName(currentValue));
   }
 
@@ -58,7 +56,7 @@ export default function GameSearchbar({ setGameID }: any) {
   if (!isDesktop) {
     // Mobile layout with Drawer
     return (
-      <Drawer>
+      <Drawer open={open} onOpenChange={setOpen}>
         <DrawerTrigger asChild>
           <Button
             variant="outline"

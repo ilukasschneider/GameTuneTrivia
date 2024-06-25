@@ -2,6 +2,7 @@
 import * as THREE from "three";
 import React from "react";
 import PropTypes from "prop-types";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 class SoundVisualizer extends React.Component {
   componentDidMount() {
@@ -182,23 +183,19 @@ class SoundVisualizer extends React.Component {
     this.lines.children.forEach((plane) => {
       // Move the plane and its line along the z-axis
       for (let i = 0; i < 400; i++) {
-        plane.geometry.attributes.position.array[i * 3 + 20] -= 1;
+        plane.geometry.attributes.position.array[i * 3 + 2] -= 1;
         if (i < 200) {
           plane.children[0].geometry.attributes.position.array[i * 3 + 2] -= 1;
         }
       }
 
-      // Check if the plane has moved beyond a certain z position
       if (plane.geometry.attributes.position.array[2] <= -600) {
-        // If so, add it to the array of planes to remove
         planesThatHaveGoneFarEnough.push(plane);
       } else {
-        // Otherwise, mark the geometry as needing an update
         plane.geometry.attributes.position.needsUpdate = true;
         plane.children[0].geometry.attributes.position.needsUpdate = true;
       }
     });
-    // Remove the planes that have moved far enough from the scene
     planesThatHaveGoneFarEnough.forEach((plane) => this.lines.remove(plane));
   }
 
