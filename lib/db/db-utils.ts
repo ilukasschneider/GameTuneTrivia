@@ -1,6 +1,5 @@
 import tuneData from "@/lib/db/tune-data.json";
 import data from "@/lib/db/game-data.json";
-import game_statistic from "@/lib/db/game-statistic.json";
 
 export interface Game {
   id: string;
