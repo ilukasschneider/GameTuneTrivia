@@ -6,6 +6,7 @@ import { getTuneData } from "@/lib/db/db-utils";
 import { Suspense, useEffect, useState } from "react";
 import { YTPlayer } from "@/components/ui/audio-player/yt-player";
 import { ConfettiCanvas } from "@/components/ui/game-ui/confetti/confettiCanvas";
+import { Progress } from "@/components/ui/progress";
 
 export default function Tune({ params }: { params: { id: string } }) {
   // State to track the user's progress, initializing from localStorage if available
@@ -23,7 +24,7 @@ export default function Tune({ params }: { params: { id: string } }) {
   );
 
   // State to track the colors of the circles indicating guess status
-  const [circleColors, setCircleColors] = useState<string[]>([
+  const [progressIndicator, setProgressIndicator] = useState<string[]>([
     "bg-accent",
     "bg-accent",
     "bg-accent",
@@ -51,28 +52,28 @@ export default function Tune({ params }: { params: { id: string } }) {
     // Update circle colors based on the guess history
     switch (guessHistory) {
       case "wrong guess":
-        setCircleColors(["bg-red-500", "bg-accent", "bg-accent"]);
+        setProgressIndicator(["bg-red-500", "bg-accent", "bg-accent"]);
         break;
       case "correct guess":
-        setCircleColors(["bg-green-500", "bg-accent", "bg-accent"]);
+        setProgressIndicator(["bg-green-500", "bg-accent", "bg-accent"]);
         setConfetti(true);
         break;
       case "wrong guess,wrong guess":
-        setCircleColors(["bg-red-500", "bg-red-500", "bg-accent"]);
+        setProgressIndicator(["bg-red-500", "bg-red-500", "bg-accent"]);
         break;
       case "wrong guess,correct guess":
-        setCircleColors(["bg-red-500", "bg-green-500", "bg-accent"]);
+        setProgressIndicator(["bg-red-500", "bg-green-500", "bg-accent"]);
         setConfetti(true);
         break;
       case "wrong guess,wrong guess,wrong guess":
-        setCircleColors(["bg-red-500", "bg-red-500", "bg-red-500"]);
+        setProgressIndicator(["bg-red-500", "bg-red-500", "bg-red-500"]);
         break;
       case "wrong guess,wrong guess,correct guess":
-        setCircleColors(["bg-red-500", "bg-red-500", "bg-green-500"]);
+        setProgressIndicator(["bg-red-500", "bg-red-500", "bg-green-500"]);
         setConfetti(true);
         break;
       default:
-        setCircleColors(["bg-accent", "bg-accent", "bg-accent"]);
+        setProgressIndicator(["bg-accent", "bg-accent", "bg-accent"]);
         break;
     }
   }, [progress, params.id, guessHistory]);
@@ -124,29 +125,46 @@ export default function Tune({ params }: { params: { id: string } }) {
     <>
       <ConfettiCanvas active={confetti} fadingMode="OFF" stopAfterMs={10000} />
 
-      <div className="place-content-center grid gap-3">
-        {progress !== "passed" && progress !== "failed" ? (
-          <Suspense fallback={<div>Loading...</div>}>
-            <div className="relative lg:-translate-y-40 sm:pt-10">
+      {progress !== "passed" && progress !== "failed" ? (
+        <div className="grid place-content-center gap-4 transform -translate-y-5 pt-2">
+          <div className="relative">
+            <Suspense fallback={<div>Loading...</div>}>
               <SoundVisualizer audio={audio} length={parseInt(progress)} />
-            </div>
-          </Suspense>
-        ) : (
-          <YTPlayer video_id={tuneData.video_id} />
-        )}
-      </div>
+            </Suspense>
+          </div>
 
-      <div className="place-content-center grid gap-3 relative  sm:pt-10">
-        <div className="flex justify-center gap-5 lg:gap-10 mb-8">
-          <div className={`h-8 w-8 rounded-lg ${circleColors[0]}`} />
-          <div className={`h-8 w-8 rounded-lg ${circleColors[1]}`} />
-          <div className={`h-8 w-8 rounded-lg ${circleColors[2]}`} />
+          <div className="grid place-content-center gap-4 mt-4 sm:mt-6 lg:mt-8 xl:mt-10">
+            <div className="flex justify-center gap-3 sm:gap-4 lg:gap-5">
+              <div className={`h-8 w-8 rounded-lg ${progressIndicator[0]}`} />
+              <div className={`h-8 w-8 rounded-lg ${progressIndicator[1]}`} />
+              <div className={`h-8 w-8 rounded-lg ${progressIndicator[2]}`} />
+            </div>
+            <GameSearchbar setGameID={setSelectedGameID} />
+            <Button variant={"secondary"} onClick={checkGuess}>
+              Guess
+            </Button>
+          </div>
         </div>
-        <GameSearchbar setGameID={setSelectedGameID} />
-        <Button variant={"secondary"} onClick={checkGuess}>
-          Guess
-        </Button>
-      </div>
+      ) : (
+        <div>
+          <div className="grid place-content-center gap-4 pt-2">
+            <YTPlayer video_id={tuneData.video_id} />
+          </div>
+          <div className="flex justify-center gap-3 sm:gap-4 lg:gap-5 p-20">
+            <div className={`h-8 w-8 rounded-lg ${progressIndicator[0]}`} />
+            <div className={`h-8 w-8 rounded-lg ${progressIndicator[1]}`} />
+            <div className={`h-8 w-8 rounded-lg ${progressIndicator[2]}`} />
+          </div>
+          <div className="w-full flex justify-center">
+            <div className="flex justify-center gap-3 sm:gap-4 lg:gap-5 w-3/4 max-w-md">
+              <Progress value={33} className="flex-1" />
+              <Progress value={33} className="flex-1" />
+              <Progress value={33} className="flex-1" />
+              <Progress value={33} className="flex-1" />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
