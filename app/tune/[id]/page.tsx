@@ -6,7 +6,8 @@ import { getTuneData } from "@/lib/db/db-utils";
 import { Suspense, useEffect, useState } from "react";
 import { YTPlayer } from "@/components/ui/audio-player/yt-player";
 import { ConfettiCanvas } from "@/components/ui/game-ui/confetti/confettiCanvas";
-import { Progress } from "@/components/ui/progress";
+import React from "react";
+import { Helmet } from "react-helmet";
 
 export default function Tune({ params }: { params: { id: string } }) {
   // State to track the user's progress, initializing from localStorage if available
@@ -123,6 +124,12 @@ export default function Tune({ params }: { params: { id: string } }) {
 
   return (
     <>
+      <Helmet>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+      </Helmet>
       <ConfettiCanvas active={confetti} fadingMode="OFF" stopAfterMs={10000} />
 
       {progress !== "passed" && progress !== "failed" ? (
