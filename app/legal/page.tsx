@@ -25,26 +25,6 @@ export default function About() {
               third-party content. We encourage users to comply with all
               applicable laws and regulations when using our platform.
             </p>
-
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              Use of YouTube Videos as Music Source
-            </h2>
-            <div className="prose prose-lg dark:prose-invert">
-              <p>
-                Game Tune Trivia incorporates the IGDB (Internet Game Database)
-                API to provide information about video games featured in our
-                trivia game. We respect the terms and conditions set forth by
-                IGDB and utilize their API in accordance with their guidelines.
-              </p>
-              <p>
-                Please note that while Game Tune Trivia strives to provide
-                accurate and up-to-date information about video games, we cannot
-                guarantee the completeness or correctness of the data obtained
-                from the IGDB API. Users should use the information provided on
-                our platform for entertainment purposes only and verify any
-                critical details from official sources.
-              </p>
-            </div>
           </div>
         </div>
       </div>

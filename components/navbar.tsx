@@ -26,7 +26,7 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: "About Game Tune Trivia",
     href: "/about",
-    description: "Discover the Symphony Behind the Scenes",
+    description: "This is about Game Tune Trivia.",
   },
   {
     title: "Legal",
@@ -35,7 +35,16 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-const todaysTune = data[data.length - 1];
+// Compute the number of days since October 13, 2024
+const startDate = new Date("2024-10-13");
+const today = new Date();
+// Calculate the difference in time
+const diffTime = today.getTime() - startDate.getTime();
+// Convert time difference to days
+const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+// Ensure we don't request more items than available
+const currentGameTuneList = data.slice(0, Math.min(diffDays, data.length));
+const todaysTune = currentGameTuneList[currentGameTuneList.length - 1];
 const todaysTuneLink = todaysTune.link;
 
 // Define the reset function

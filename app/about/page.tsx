@@ -11,11 +11,10 @@ export default function About() {
           </h2>
           <div className="prose prose-lg dark:prose-invert">
             <p>
-              Dive into the captivating world where gaming meets melody. Game
-              Tune Trivia celebrates the passion for gaming and music, inviting
-              you to guess games based on their iconic soundtracks. Join us on a
-              journey where nostalgia meets challenge, and let your love for
-              gaming and music intertwine in an experience like no other.
+              Dive into Game Tune Trivia, a project born from my first journey
+              into Next.js and full-stack development. This is my first attempt
+              at creating a web app, blending my passion for video game
+              soundtracks with the thrill of learning something new.
             </p>
           </div>
         </div>
