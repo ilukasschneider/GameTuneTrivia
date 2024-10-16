@@ -10,6 +10,15 @@ const config: Config = {
   ],
   prefix: "",
   theme: {
+    fontSize: {
+      base: ["16px", "24px"], // Base font size
+      lg: ["20px", "28px"], // 16px × 1.25
+      xl: ["24px", "32px"], // 20px × 1.2
+      "2xl": ["30px", "40px"], // 24px × 1.25
+      "3xl": ["36px", "44px"], // 30px × 1.2
+      "4xl": ["48px", "56px"], // 36px × 1.333
+      "5xl": ["60px", "68px"], // 48px × 1.25
+    },
     screens: {
       sm: "200px",
       md: "768px",
