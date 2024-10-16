@@ -155,14 +155,6 @@ export default function Tune({ params }: { params: { id: string } }) {
             <div className={`h-8 w-8 rounded-lg ${progressIndicator[1]}`} />
             <div className={`h-8 w-8 rounded-lg ${progressIndicator[2]}`} />
           </div>
-          <div className="w-full flex justify-center">
-            <div className="flex justify-center gap-3 sm:gap-4 lg:gap-5 w-3/4 max-w-md">
-              <Progress value={33} className="flex-1" />
-              <Progress value={33} className="flex-1" />
-              <Progress value={33} className="flex-1" />
-              <Progress value={33} className="flex-1" />
-            </div>
-          </div>
         </div>
       )}
     </>
