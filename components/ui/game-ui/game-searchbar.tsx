@@ -62,7 +62,7 @@ export default function GameSearchbar({ setGameID }: any) {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="lg:w-[400px] md:w-[300px] sm:w-[200px] justify-between overflow-x-hidden"
+            className="lg:w-[400px] md:w-[300px] sm:w-[200px] justify-between overflow-x-hidden overflow-y-hidden"
           >
             {value
               ? allGames.find((game) => game.name === value)?.name // Display selected game name

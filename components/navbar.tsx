@@ -21,10 +21,20 @@ import { HomeIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import data from "@/lib/trivia-linking.json";
 
+const currentDate = new Date();
+
+// Extract day, month, and year
+const day = String(currentDate.getDate()).padStart(2, "0"); // Pad with leading zero if needed
+const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
+const year = currentDate.getFullYear(); // Full year (4 digits)
+
+// Format the date as dd-mm-yyyy
+const formattedDate = `${day}-${month}-${year}`;
+
 // Data for the components section of the navigation menu
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "About Game Tune Trivia",
+    title: "About",
     href: "/about",
     description: "This is about Game Tune Trivia.",
   },
@@ -89,9 +99,7 @@ export function Navbar() {
                       </div>
                       {/* Project description */}
                       <p className="text-sm leading-tight text-white">
-                        Embark on a captivating journey of sonic exploration as
-                        you endeavor to unlock the melodic enigma woven within
-                        today&apos;s Game Tune.
+                        {formattedDate}
                       </p>
                     </a>
                   </NavigationMenuLink>
