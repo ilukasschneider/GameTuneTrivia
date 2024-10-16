@@ -5,7 +5,7 @@ import { ModeToggle } from "./mode-toggle";
 // Utility function for conditional class names
 import { cn } from "@/lib/utils";
 // Importing custom icons component
-
+import { useState } from "react";
 // Importing components and styles from navigation-menu for building a navigation UI
 import {
   NavigationMenu,
@@ -19,6 +19,7 @@ import {
 import { Button } from "./ui/button";
 import { HomeIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import data from "@/lib/trivia-linking.json";
 
 // Data for the components section of the navigation menu
 const components: { title: string; href: string; description: string }[] = [
@@ -34,7 +35,21 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
+const todaysTune = data[data.length - 1];
+const todaysTuneLink = todaysTune.link;
+
+// Define the reset function
+const handleReset = () => {
+  // If you're using localStorage
+  localStorage.clear();
+};
+
 export function Navbar() {
+  // State to track the user's guess history, initializing from localStorage if available
+  const [randomTuneLink, setRandomTuneLink] = useState<any>(
+    data[Math.floor(Math.random() * data.length)].link,
+  );
+
   return (
     <header className="fixed top-0 z-50 w-full bg-transparent">
       <NavigationMenu className="sticky top-0 object-centermax-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -56,7 +71,7 @@ export function Navbar() {
                   <NavigationMenuLink asChild>
                     <a
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-secondary hover:bg-accent  from-primary to-destructive p-6 no-underline outline-none focus:shadow-md"
-                      href="/tune"
+                      href={todaysTuneLink}
                     >
                       {/* Project logo */}
                       {/* Project name */}
@@ -76,8 +91,15 @@ export function Navbar() {
                 <ListItem href="/archive" title="Tune Archive">
                   Your chic sanctuary for game music aficionados.
                 </ListItem>
-                <ListItem href="/tune" title="Random Tune">
+                <ListItem href={randomTuneLink} title="Random Tune">
                   Where serendipity meets melody.
+                </ListItem>
+                <ListItem
+                  href="/today"
+                  title="Reset Progress"
+                  onClick={handleReset}
+                >
+                  Begin your musical journey anew.
                 </ListItem>
               </ul>
             </NavigationMenuContent>
