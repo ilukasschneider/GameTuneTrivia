@@ -31,6 +31,11 @@ export default function Tune({ params }: { params: { id: string } }) {
 
   const [confetti, setConfetti] = useState<boolean>(false);
 
+  useEffect(() => {
+    if (progress === "passed") {
+      setConfetti(true);
+    }
+  }, [progress]);
   // Effect to initialize localStorage values if they are not already set
   useEffect(() => {
     if (!localStorage.getItem(`levelProgression: ${params.id}`)) {
