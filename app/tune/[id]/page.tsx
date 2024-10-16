@@ -3,13 +3,14 @@ import GameSearchbar from "@/components/ui/game-ui/game-searchbar";
 import SoundVisualizer from "@/components/ui/game-ui/sound-visualizer";
 import { Button } from "@/components/ui/button";
 import { getTuneData } from "@/lib/db/db-utils";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState, useRef } from "react";
 import { YTPlayer } from "@/components/ui/audio-player/yt-player";
 import { ConfettiCanvas } from "@/components/ui/game-ui/confetti/confettiCanvas";
-import React from "react";
-import { Helmet } from "react-helmet";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 export default function Tune({ params }: { params: { id: string } }) {
+  const lockRef = useRef<HTMLDivElement>(null);
+
   // State to track the user's progress, initializing from localStorage if available
   const [progress, setProgress] = useState<string>(
     typeof window !== "undefined"
@@ -33,6 +34,17 @@ export default function Tune({ params }: { params: { id: string } }) {
 
   const [confetti, setConfetti] = useState<boolean>(false);
 
+  useEffect(() => {
+    const targetElement = lockRef.current;
+    if (targetElement) {
+      disableBodyScroll(targetElement);
+    }
+    return () => {
+      if (targetElement) {
+        enableBodyScroll(targetElement);
+      }
+    };
+  }, []);
   // Effect to initialize localStorage values if they are not already set
   useEffect(() => {
     if (!localStorage.getItem(`levelProgression: ${params.id}`)) {
@@ -123,13 +135,7 @@ export default function Tune({ params }: { params: { id: string } }) {
   }
 
   return (
-    <>
-      <Helmet>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-      </Helmet>
+    <div ref={lockRef}>
       <ConfettiCanvas active={confetti} fadingMode="OFF" stopAfterMs={10000} />
 
       {progress !== "passed" && progress !== "failed" ? (
@@ -167,6 +173,6 @@ export default function Tune({ params }: { params: { id: string } }) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

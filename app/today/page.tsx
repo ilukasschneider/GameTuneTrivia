@@ -2,6 +2,8 @@
 import { GlareCard } from "@/components/ui/glare-card";
 import Link from "next/link";
 import data from "@/lib/trivia-linking.json";
+import { useEffect, useRef, useState, Suspense } from "react";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 // Compute the number of days since October 13, 2024
 const startDate = new Date("2024-10-13");
@@ -26,8 +28,21 @@ const year = currentDate.getFullYear(); // Full year (4 digits)
 const formattedDate = `${day}-${month}-${year}`;
 
 export default function Page() {
+  const lockRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const targetElement = lockRef.current;
+    if (targetElement) {
+      disableBodyScroll(targetElement);
+    }
+    return () => {
+      if (targetElement) {
+        enableBodyScroll(targetElement);
+      }
+    };
+  }, []);
+
   return (
-    <div className="mt-40">
+    <div className="mt-40" ref={lockRef}>
       <div className="place-content-center grid gap-3 mt-40">
         <Link href={todaysTuneLink}>
           <GlareCard className="flex flex-col items-start justify-end py-8 px-6">
