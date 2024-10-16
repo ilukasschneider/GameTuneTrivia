@@ -83,7 +83,9 @@ export const ConfettiCanvas: React.FC<Props> = ({
     <React.Fragment>
       {!hide && (
         <div
-          className={`${running ? "react-confetti-canvas" : "react-confetti-canvas fade-out"} -z-10`}
+          className={`${
+            running ? "react-confetti-canvas" : "react-confetti-canvas fade-out"
+          } absolute inset-0 z-50 pointer-events-none`}
         >
           <canvas
             id="confetti-canvas"

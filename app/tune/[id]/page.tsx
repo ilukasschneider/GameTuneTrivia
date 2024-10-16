@@ -122,7 +122,7 @@ export default function Tune({ params }: { params: { id: string } }) {
 
   return (
     <div id="main">
-      <ConfettiCanvas active={confetti} fadingMode="OFF" stopAfterMs={10000} />
+      <ConfettiCanvas active={confetti} stopAfterMs={10000} />
 
       {progress !== "passed" && progress !== "failed" ? (
         <div className="grid place-content-center gap-4 transform -translate-y-5 pt-2">
