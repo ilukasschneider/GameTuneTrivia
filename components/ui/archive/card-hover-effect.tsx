@@ -77,7 +77,7 @@ export const Card = ({
         className,
       )}
     >
-      <div className="relative z-50">
+      <div className="relative z-45">
         <div className="p-4">{children}</div>
         {/* Render the children passed to Card, typically content or other components. */}
       </div>

@@ -60,7 +60,7 @@ export function Navbar() {
   );
 
   return (
-    <header className="fixed top-0 z-10 w-full bg-background">
+    <header className="fixed top-0 z-50 w-full bg-background">
       <NavigationMenu className="sticky top-0 object-centermax-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavigationMenuList>
           <Link href="/today">
