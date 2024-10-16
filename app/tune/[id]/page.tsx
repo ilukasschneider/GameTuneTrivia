@@ -150,7 +150,10 @@ export default function Tune({ params }: { params: { id: string } }) {
           <div className="grid place-content-center gap-4 pt-2">
             <YTPlayer video_id={tuneData.video_id} />
           </div>
-          <div className="flex justify-center gap-3 sm:gap-4 lg:gap-5 p-20">
+          <div className="grid place-content-center gap-4 pt-2">
+            {tuneData.title}
+          </div>
+          <div className="flex justify-center gap-3 sm:gap-4 lg:gap-5 p-10">
             <div className={`h-8 w-8 rounded-lg ${progressIndicator[0]}`} />
             <div className={`h-8 w-8 rounded-lg ${progressIndicator[1]}`} />
             <div className={`h-8 w-8 rounded-lg ${progressIndicator[2]}`} />

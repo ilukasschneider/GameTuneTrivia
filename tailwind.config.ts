@@ -16,6 +16,8 @@ const config: Config = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+      // Custom height-based breakpoint
+      "min-height": { raw: "(min-height: 600px)" },
     },
     extend: {
       fontFamily: {

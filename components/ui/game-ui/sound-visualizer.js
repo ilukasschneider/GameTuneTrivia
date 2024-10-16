@@ -27,11 +27,12 @@ class SoundVisualizer extends React.Component {
     // Make the camera look towards a specific point in the scene
     this.camera.lookAt(400, 0, 0);
 
-    // Determine the rendering dimension based on the window size
+    // Updated dimension calculation
     this.dimension = Math.min(
-      window.innerHeight / 1.5 - 50,
-      window.innerWidth / 1.5 - 50,
+      window.innerHeight / 1.5,
+      window.innerWidth / 1.5,
     );
+    this.dimension = Math.max(this.dimension, 400); // Minimum size
 
     // Set up the WebGL renderer with antialiasing and transparency
     this.renderer = new THREE.WebGLRenderer({
@@ -206,6 +207,7 @@ class SoundVisualizer extends React.Component {
         window.innerHeight / 1.5,
         window.innerWidth / 1.5,
       );
+      this.dimension = Math.max(this.dimension, 400);
       this.renderer.setSize(this.dimension, this.dimension);
       this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       // Log the new dimension for debugging purposes
