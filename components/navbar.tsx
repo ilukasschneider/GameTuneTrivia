@@ -95,7 +95,7 @@ export function Navbar() {
                       {/* Project logo */}
                       {/* Project name */}
                       <div className="mb-2 mt-4 text-lg font-medium text-white">
-                        Today&apos;s Tune
+                        Todays Tune
                       </div>
                       {/* Project description */}
                       <p className="text-sm leading-tight text-white">
@@ -109,7 +109,7 @@ export function Navbar() {
                   Your chic sanctuary for game music aficionados.
                 </ListItem>
                 <ListItem href={randomTuneLink} title="Random Tune">
-                  Where serendipity meets melody.
+                  Where serendipity meets unlimited melodies.
                 </ListItem>
                 <ListItem
                   href="/today"
