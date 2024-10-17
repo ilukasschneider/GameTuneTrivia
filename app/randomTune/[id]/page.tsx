@@ -21,14 +21,6 @@ export default function RandomTune({ params }: { params: { id: string } }) {
     "bg-accent",
   ]);
 
-  const [confetti, setConfetti] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (progress === "passed") {
-      setConfetti(true);
-    }
-  }, [progress]);
-
   // Effect to update localStorage whenever progress or guessHistory changes
   useEffect(() => {
     // Update circle colors based on the guess history
@@ -38,21 +30,18 @@ export default function RandomTune({ params }: { params: { id: string } }) {
         break;
       case "correct guess":
         setProgressIndicator(["bg-green-500", "bg-accent", "bg-accent"]);
-        setConfetti(true);
         break;
       case "wrong guess,wrong guess":
         setProgressIndicator(["bg-red-500", "bg-red-500", "bg-accent"]);
         break;
       case "wrong guess,correct guess":
         setProgressIndicator(["bg-red-500", "bg-green-500", "bg-accent"]);
-        setConfetti(true);
         break;
       case "wrong guess,wrong guess,wrong guess":
         setProgressIndicator(["bg-red-500", "bg-red-500", "bg-red-500"]);
         break;
       case "wrong guess,wrong guess,correct guess":
         setProgressIndicator(["bg-red-500", "bg-red-500", "bg-green-500"]);
-        setConfetti(true);
         break;
       default:
         setProgressIndicator(["bg-accent", "bg-accent", "bg-accent"]);
@@ -105,7 +94,7 @@ export default function RandomTune({ params }: { params: { id: string } }) {
 
   return (
     <div className="overflow-hidden">
-      <ConfettiCanvas active={confetti} stopAfterMs={10000} />
+      <ConfettiCanvas active={progress === "passed"} stopAfterMs={10000} />
 
       {progress !== "passed" && progress !== "failed" ? (
         <div className="grid place-content-center gap-4 transform -translate-y-5 pt-2">
