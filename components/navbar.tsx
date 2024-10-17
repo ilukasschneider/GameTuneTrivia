@@ -5,7 +5,7 @@ import { ModeToggle } from "./mode-toggle";
 // Utility function for conditional class names
 import { cn } from "@/lib/utils";
 // Importing custom icons component
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // Importing components and styles from navigation-menu for building a navigation UI
 import {
   NavigationMenu,
@@ -14,16 +14,16 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "./ui/button";
 import { HomeIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import data from "@/lib/trivia-linking.json";
 
+// Get the current date
 const currentDate = new Date();
 
-// Extract day, month, and year
+// Extract day, month, and year from the current date
 const day = String(currentDate.getDate()).padStart(2, "0"); // Pad with leading zero if needed
 const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are zero-based, so add 1
 const year = currentDate.getFullYear(); // Full year (4 digits)
@@ -57,18 +57,16 @@ const currentGameTuneList = data.slice(0, Math.min(diffDays, data.length));
 const todaysTune = currentGameTuneList[currentGameTuneList.length - 1];
 const todaysTuneLink = todaysTune.link;
 
-// Define the reset function
+// Define the reset function to clear localStorage
 const handleReset = () => {
-  // If you're using localStorage
   localStorage.clear();
 };
 
 export function Navbar() {
-  // State to track the user's guess history, initializing from localStorage if available
   const [randomTuneLink, setRandomTuneLink] = useState<any>(
-    data[Math.floor(Math.random() * data.length)].link,
+    "/randomTune/" +
+      data[Math.floor(Math.random() * data.length)].link.substring(6),
   );
-
   return (
     <header className="fixed top-0 z-50 w-full bg-background">
       <NavigationMenu className="sticky top-0 object-centermax-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -79,32 +77,29 @@ export function Navbar() {
               <span className="sr-only">Home</span>
             </Button>
           </Link>
-          {/* Navigation item for the "Getting started" section */}
+          {/* Navigation item for the "Tune Selection" section */}
           <NavigationMenuItem>
             <NavigationMenuTrigger>Tune Selection</NavigationMenuTrigger>
             <NavigationMenuContent>
               {/* Grid layout for better organization of the content */}
               <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                {/* Special list item for the project logo and introduction */}
+                {/* Special list item for today's tune */}
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <a
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-secondary hover:bg-accent  from-primary to-destructive p-6 no-underline outline-none focus:shadow-md"
                       href={todaysTuneLink}
                     >
-                      {/* Project logo */}
-                      {/* Project name */}
                       <div className="mb-2 mt-4 text-lg font-medium text-white">
                         Todays Tune
                       </div>
-                      {/* Project description */}
                       <p className="text-sm leading-tight text-white">
                         {formattedDate}
                       </p>
                     </a>
                   </NavigationMenuLink>
                 </li>
-                {/* List items for different sections under "Getting started" */}
+                {/* List items for different sections under "Tune Selection" */}
                 <ListItem href="/archive" title="Tune Archive">
                   Your chic sanctuary for game music aficionados.
                 </ListItem>
@@ -121,7 +116,7 @@ export function Navbar() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          {/* Navigation item for the "Components" section */}
+          {/* Navigation item for the "About" section */}
           <NavigationMenuItem>
             <NavigationMenuTrigger>About</NavigationMenuTrigger>
             <NavigationMenuContent>
