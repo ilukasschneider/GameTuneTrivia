@@ -11,8 +11,10 @@ export default function About() {
               This is a project born from my first journey into Next.js and
               full-stack development. This is my first attempt at creating a web
               app, blending my passion for video game soundtracks with the
-              thrill of learning something new. I would also like to give credit
-              to{" "}
+              thrill of learning something new. Additionally, my good friend
+              Nikoley also loves video game music, so this is a great
+              opportunity for us to share our knowledge. I would also like to
+              give credit to{" "}
               <a href="https://www.maxemitchell.com/code_art/unknown_lines">
                 Max E. Mitchell
               </a>{" "}

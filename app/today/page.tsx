@@ -25,7 +25,7 @@ const year = currentDate.getFullYear(); // Full year (4 digits)
 // Format the date as dd-mm-yyyy
 const formattedDate = `${day}-${month}-${year}`;
 
-export default function Page() {
+export default function Today() {
   return (
     <div className="overflow-hidden pb-10">
       <div className="place-content-center grid gap-3 mt-40">
