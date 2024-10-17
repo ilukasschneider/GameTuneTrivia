@@ -15,22 +15,25 @@ export const ConfettiCanvas: React.FC<Props> = ({
 }) => {
   const [running, setRunning] = React.useState(active);
   const [hide, setHide] = React.useState(false);
-  const canvasRef = React.useRef(null);
+  const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const runningRef = React.useRef(running);
+
   let width = 20;
   let height = 20;
   if (typeof window !== "undefined") {
     width = window.innerWidth;
     height = window.innerHeight;
   }
+
   let particles: ConfettiParticle[] = [];
   runningRef.current = running;
 
   function createParticles() {
-    if (!canvasRef || !canvasRef.current) {
+    if (!canvasRef.current) {
       return;
     }
-    const context = (canvasRef.current as any).getContext("2d");
+    const context = canvasRef.current.getContext("2d");
+    if (!context) return;
     particles = [];
     let total = 100;
 
@@ -47,40 +50,52 @@ export const ConfettiCanvas: React.FC<Props> = ({
   }
 
   function animationFunc() {
-    if (!canvasRef || !canvasRef.current) {
+    if (!canvasRef.current) {
       return;
     }
-    const context = (canvasRef.current as any).getContext("2d");
-    requestAnimationFrame(animationFunc);
-    context && context.clearRect(0, 0, width, height);
+    const context = canvasRef.current.getContext("2d");
+    if (!context) return;
 
-    for (let p of particles) {
-      p.width = width;
-      p.height = height;
-      p.update();
-      p.draw();
+    function render() {
+      if (!runningRef.current) return;
+      requestAnimationFrame(render);
+      context.clearRect(0, 0, width, height);
+
+      for (let p of particles) {
+        p.width = width;
+        p.height = height;
+        p.update();
+        p.draw();
+      }
     }
+
+    render();
   }
 
   React.useEffect(() => {
-    createParticles();
-    animationFunc();
-    if (stopAfterMs) {
-      setTimeout(() => {
-        setRunning(false);
-      }, stopAfterMs - 1000);
-      setTimeout(() => {
-        setHide(true);
-      }, stopAfterMs);
-    }
-  }, []);
+    if (active) {
+      setHide(false); // Show the confetti container
+      setRunning(true); // Start the animation
+      createParticles(); // Create new particles
+      animationFunc(); // Start the animation loop
 
-  React.useEffect(() => {
-    setRunning(active);
-  }, [active]);
+      if (stopAfterMs) {
+        setTimeout(() => {
+          setRunning(false);
+        }, stopAfterMs - 1000);
+        setTimeout(() => {
+          setHide(true);
+        }, stopAfterMs);
+      }
+    } else {
+      // Optionally handle when active is false
+      setRunning(false);
+      setHide(true);
+    }
+  }, [active]); // Run this effect whenever 'active' changes
 
   return (
-    <React.Fragment>
+    <>
       {!hide && (
         <div
           className={`${
@@ -95,6 +110,6 @@ export const ConfettiCanvas: React.FC<Props> = ({
           />
         </div>
       )}
-    </React.Fragment>
+    </>
   );
 };

@@ -36,6 +36,7 @@ export default function Tune({ params }: { params: { id: string } }) {
       setConfetti(true);
     }
   }, [progress]);
+
   // Effect to initialize localStorage values if they are not already set
   useEffect(() => {
     if (!localStorage.getItem(`levelProgression: ${params.id}`)) {

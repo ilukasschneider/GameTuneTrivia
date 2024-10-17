@@ -62,7 +62,7 @@ export default function GameSearchbar({ setGameID }: any) {
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className="lg:w-[400px] md:w-[300px] sm:w-[200px] justify-between overflow-x-hidden overflow-y-hidden"
+            className="lg:w-[400px] md:w-[300px] sm:w-[200px] justify-between overflow-hidden"
           >
             {value
               ? allGames.find((game) => game.name === value)?.name // Display selected game name
@@ -71,7 +71,10 @@ export default function GameSearchbar({ setGameID }: any) {
         </DrawerTrigger>
         <DrawerContent className="mt-4 border-t">
           <Command>
-            <CommandInput placeholder="Search games..." className="pr-6" />
+            <CommandInput
+              placeholder="Search games..."
+              className="pr-6 overflow-hidden"
+            />
             {allGames.length === 0 && (
               <CommandEmpty>No games found.</CommandEmpty> // Display if no games are found
             )}
