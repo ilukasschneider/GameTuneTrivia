@@ -16,7 +16,7 @@ export default function About() {
               <a href="https://www.maxemitchell.com/code_art/unknown_lines">
                 Max E. Mitchell
               </a>{" "}
-              for his audio visualizer, "Unknown Lines," which I used in my
+              for his audio visualizer, Unknown Lines which I used in my
               project. Thank you for this amazing tool!
             </p>
           </div>
