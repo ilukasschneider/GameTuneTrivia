@@ -10,8 +10,8 @@ interface Props {
 
 export const ConfettiCanvas: React.FC<Props> = ({
   active = true,
-  fadingMode = "OFF",
-  stopAfterMs = 0,
+  fadingMode = "ON",
+  stopAfterMs = 20000,
 }) => {
   const [running, setRunning] = React.useState(active);
   const [hide, setHide] = React.useState(false);

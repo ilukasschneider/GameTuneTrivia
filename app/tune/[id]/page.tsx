@@ -117,7 +117,7 @@ export default function Tune({ params }: { params: { id: string } }) {
 
   return (
     <div className="overflow-hidden">
-      <ConfettiCanvas active={progress === "passed"} stopAfterMs={10000} />
+      <ConfettiCanvas active={progress === "passed"} />
 
       {progress !== "passed" && progress !== "failed" ? (
         <div className="grid place-content-center gap-4 transform -translate-y-5 pt-2">

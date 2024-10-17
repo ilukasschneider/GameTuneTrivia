@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { getTuneData } from "@/lib/db/db-utils";
 import { Suspense, useEffect, useState } from "react";
 import { YTPlayer } from "@/components/ui/audio-player/yt-player";
-import { ConfettiCanvas } from "@/components/ui/game-ui/confetti/confettiCanvas";
 
 export default function RandomTune({ params }: { params: { id: string } }) {
   // State to track the user's progress, initializing from localStorage if available
@@ -94,8 +93,6 @@ export default function RandomTune({ params }: { params: { id: string } }) {
 
   return (
     <div className="overflow-hidden">
-      <ConfettiCanvas active={progress === "passed"} stopAfterMs={10000} />
-
       {progress !== "passed" && progress !== "failed" ? (
         <div className="grid place-content-center gap-4 transform -translate-y-5 pt-2">
           <div className="relative">
