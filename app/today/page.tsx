@@ -27,7 +27,7 @@ const formattedDate = `${day}-${month}-${year}`;
 
 export default function Page() {
   return (
-    <div className="mt-40">
+    <div className="overflow-hidden">
       <div className="place-content-center grid gap-3 mt-40">
         <Link href={todaysTuneLink}>
           <GlareCard className="flex flex-col items-start justify-end py-8 px-6">

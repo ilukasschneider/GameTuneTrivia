@@ -127,7 +127,7 @@ export default function Tune({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div id="main">
+    <div className="overflow-hidden">
       <ConfettiCanvas active={confetti} stopAfterMs={10000} />
 
       {progress !== "passed" && progress !== "failed" ? (

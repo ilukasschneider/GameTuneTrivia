@@ -51,7 +51,20 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card className="bg-background border-black dark:border-white dark:group-hover:border-white hover:border-inherit">
+          <Card
+            className={cn(
+              "bg-background border-black dark:border-white dark:group-hover:border-white hover:border-inherit",
+              localStorage.getItem(
+                `levelProgression: ${item.link.substring(6)}`,
+              ) === "passed"
+                ? "border-green-600 dark:border-green-600"
+                : localStorage.getItem(
+                      `levelProgression: ${item.link.substring(6)}`,
+                    ) === "failed"
+                  ? "border-red-600 dark:border-red-600"
+                  : "",
+            )}
+          >
             <CardTitle>{item.title}</CardTitle>
             {/* Display the title of the current item. */}
           </Card>
