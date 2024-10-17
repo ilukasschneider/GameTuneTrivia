@@ -37,3 +37,6 @@ next-env.d.ts
 
 # hide all python-scripts
 *.py
+
+# python virtual environment
+/env

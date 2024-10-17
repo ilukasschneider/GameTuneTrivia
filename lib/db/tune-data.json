@@ -1,50 +1,1218 @@
 [
     {
-        "id": "f7f62bdc-946d-4c18-b9cd-ff7876fc2fda",
-        "title": "Red Dead Redemption 2 - Mountain Hymn",
-        "folder_path": "f7f62bdc-946d-4c18-b9cd-ff7876fc2fda",
-        "url": "https://www.youtube.com/watch?v=0ME7x7_blf8",
-        "video_id": "0ME7x7_blf8",
-        "start_time": 24.0,
+        "id": "507cb900-3807-4d2a-a139-9936bf80604b",
+        "title": "Mass Effect 3 - Leaving Earth",
+        "folder_path": "507cb900-3807-4d2a-a139-9936bf80604b",
+        "url": "https://www.youtube.com/watch?v=KGHA9oO1Ybg",
+        "video_id": "KGHA9oO1Ybg",
+        "start_time": 35.0,
         "game_ids": [
-            25076
+            75
         ]
     },
     {
-        "id": "b6fe9d40-320d-4f8a-befb-4ed2490afc87",
-        "title": "Tunic - Memories of Memories",
-        "folder_path": "b6fe9d40-320d-4f8a-befb-4ed2490afc87",
-        "url": "https://www.youtube.com/watch?v=c6lNAefHVsY&list=PLjm8AqDqXtLMhO20cwAcjRIlgtyIRaCdK&index=2",
-        "video_id": "c6lNAefHVsY",
+        "id": "d32a45de-a055-491f-89c1-c82c8ca5dbca",
+        "title": "Hades - No Escape",
+        "folder_path": "d32a45de-a055-491f-89c1-c82c8ca5dbca",
+        "url": "https://www.youtube.com/watch?v=oksESAMg7WM",
+        "video_id": "oksESAMg7WM",
+        "start_time": 0,
+        "game_ids": [
+            113112
+        ]
+    },
+    {
+        "id": "475e7a5a-0670-4b46-8d19-1f420a20b8f9",
+        "title": "Far Cry 3 - Main Theme",
+        "folder_path": "475e7a5a-0670-4b46-8d19-1f420a20b8f9",
+        "url": "https://www.youtube.com/watch?v=OQzb1KGfCPs",
+        "video_id": "OQzb1KGfCPs",
+        "start_time": 90.0,
+        "game_ids": [
+            529
+        ]
+    },
+    {
+        "id": "1cbe979b-f44e-46b0-8d2a-cd73403ca871",
+        "title": "Assassin's Creed Unity Track 1",
+        "folder_path": "1cbe979b-f44e-46b0-8d2a-cd73403ca871",
+        "url": "https://www.youtube.com/watch?v=lTBCrrhnvO8",
+        "video_id": "lTBCrrhnvO8",
+        "start_time": 0,
+        "game_ids": [
+            5606
+        ]
+    },
+    {
+        "id": "e6550686-e3e1-4a8a-810a-7919580feeb5",
+        "title": "TUNIC - The Knight",
+        "folder_path": "e6550686-e3e1-4a8a-810a-7919580feeb5",
+        "url": "https://www.youtube.com/watch?v=2ceu3ftoye8",
+        "video_id": "2ceu3ftoye8",
         "start_time": 0,
         "game_ids": [
             23733
         ]
     },
     {
-        "id": "7b2db471-a0da-4285-a2b0-b62a5f005299",
+        "id": "0fa34aee-eda1-4976-a574-04a624de00fc",
+        "title": "Oblivion - Harvest Dawn",
+        "folder_path": "0fa34aee-eda1-4976-a574-04a624de00fc",
+        "url": "https://www.youtube.com/watch?v=s9L9sNtv1-g",
+        "video_id": "s9L9sNtv1-g",
+        "start_time": 0,
+        "game_ids": [
+            59
+        ]
+    },
+    {
+        "id": "4055a9e6-5282-4a77-b22b-df3dd4d609e9",
+        "title": "Cyberpunk 2077 - Been Good to Know Ya",
+        "folder_path": "4055a9e6-5282-4a77-b22b-df3dd4d609e9",
+        "url": "https://www.youtube.com/watch?v=2PPBne6GGiw",
+        "video_id": "2PPBne6GGiw",
+        "start_time": 0,
+        "game_ids": [
+            1877
+        ]
+    },
+    {
+        "id": "56fedb0e-ba5b-46b6-af19-a40c4b95a2eb",
+        "title": "NieR - Grandma",
+        "folder_path": "56fedb0e-ba5b-46b6-af19-a40c4b95a2eb",
+        "url": "https://www.youtube.com/watch?v=f03IHCr9dJY",
+        "video_id": "f03IHCr9dJY",
+        "start_time": 0,
+        "game_ids": [
+            7120,
+            11208
+        ]
+    },
+    {
+        "id": "2d04b694-6fe0-4799-9699-e4e217f53714",
+        "title": "Halo3 ODST - Deference for Darkness",
+        "folder_path": "2d04b694-6fe0-4799-9699-e4e217f53714",
+        "url": "https://www.youtube.com/watch?v=aAKEdd_H0XY",
+        "video_id": "aAKEdd_H0XY",
+        "start_time": 0,
+        "game_ids": [
+            989,
+            987
+        ]
+    },
+    {
+        "id": "f7f021c2-0947-49ce-b617-368abc8f293b",
+        "title": "Witcher 3 - Mystery Man",
+        "folder_path": "f7f021c2-0947-49ce-b617-368abc8f293b",
+        "url": "https://www.youtube.com/watch?v=DhXhCz1dKAQ",
+        "video_id": "DhXhCz1dKAQ",
+        "start_time": 0,
+        "game_ids": [
+            1942
+        ]
+    },
+    {
+        "id": "22ea6eb1-a498-4065-ae14-770e9bea1241",
+        "title": "Fallout 4 Main Theme",
+        "folder_path": "22ea6eb1-a498-4065-ae14-770e9bea1241",
+        "url": "https://www.youtube.com/watch?v=_yGpoRbwe4s",
+        "video_id": "_yGpoRbwe4s",
+        "start_time": 0,
+        "game_ids": [
+            9630
+        ]
+    },
+    {
+        "id": "5a49fba6-e5c3-4821-9030-1d4fe490b5da",
+        "title": "Mario Kart 8 - Dolphin Shoals",
+        "folder_path": "5a49fba6-e5c3-4821-9030-1d4fe490b5da",
+        "url": "https://www.youtube.com/watch?v=pUmzNty43Fo",
+        "video_id": "pUmzNty43Fo",
+        "start_time": 146.0,
+        "game_ids": [
+            2350,
+            2349,
+            2183,
+            2345,
+            2344,
+            2343
+        ]
+    },
+    {
+        "id": "6ff3bb31-9bef-4649-a769-f45c1e42de5e",
+        "title": "World of Warcraft - Arthas My Son",
+        "folder_path": "6ff3bb31-9bef-4649-a769-f45c1e42de5e",
+        "url": "https://www.youtube.com/watch?v=3m51oKG3BKA",
+        "video_id": "3m51oKG3BKA",
+        "start_time": 35.0,
+        "game_ids": [
+            123
+        ]
+    },
+    {
+        "id": "314ddaec-d4bb-40cc-bd88-de9122c6e4ba",
+        "title": "Silent Hill 3 - Never Forgive Me, Never Forget Me",
+        "folder_path": "314ddaec-d4bb-40cc-bd88-de9122c6e4ba",
+        "url": "https://www.youtube.com/watch?v=_r2ozeKBG20",
+        "video_id": "_r2ozeKBG20",
+        "start_time": 0,
+        "game_ids": [
+            482
+        ]
+    },
+    {
+        "id": "8ba3f5e1-727d-4c22-8eb0-a05c835cc400",
+        "title": "Grand Theft Auto IV Theme Song",
+        "folder_path": "8ba3f5e1-727d-4c22-8eb0-a05c835cc400",
+        "url": "https://www.youtube.com/watch?v=pWO718iy5mY",
+        "video_id": "pWO718iy5mY",
+        "start_time": 0,
+        "game_ids": [
+            731
+        ]
+    },
+    {
+        "id": "a2cfd22f-bf10-4d1d-9eb2-13e2bb221d35",
+        "title": "Persona 5 - Last Surprise",
+        "folder_path": "a2cfd22f-bf10-4d1d-9eb2-13e2bb221d35",
+        "url": "https://www.youtube.com/watch?v=Ec4YbVP9R-A",
+        "video_id": "Ec4YbVP9R-A",
+        "start_time": 0,
+        "game_ids": [
+            9927
+        ]
+    },
+    {
+        "id": "f4e8e880-0e19-458c-9594-4d0e926d2e3a",
         "title": "Doom Eternal - The Only Thing They Fear Is You",
-        "folder_path": "7b2db471-a0da-4285-a2b0-b62a5f005299",
+        "folder_path": "f4e8e880-0e19-458c-9594-4d0e926d2e3a",
         "url": "https://www.youtube.com/watch?v=kpnW68Q8ltc",
         "video_id": "kpnW68Q8ltc",
         "start_time": 0,
         "game_ids": [
-            7351,
             103298,
-            280,
-            312,
-            673
+            7351
         ]
     },
     {
-        "id": "182dc330-3b91-4a08-9a77-5b3d5ab3bfa7",
-        "title": "Mario & Luigi: Bowser's Inside Story - Final Boss Music",
-        "folder_path": "182dc330-3b91-4a08-9a77-5b3d5ab3bfa7",
-        "url": "https://www.youtube.com/watch?v=Ckxy-i7Dc5U&t=13s",
-        "video_id": "Ckxy-i7Dc5U",
+        "id": "2ee7aa59-8f2b-4dc8-a1ce-edf6fba91601",
+        "title": "MW2 Multiplayer Menu",
+        "folder_path": "2ee7aa59-8f2b-4dc8-a1ce-edf6fba91601",
+        "url": "https://www.youtube.com/watch?v=wmTf1VhAn-o",
+        "video_id": "wmTf1VhAn-o",
+        "start_time": 50.0,
+        "game_ids": [
+            559
+        ]
+    },
+    {
+        "id": "25ee70f2-4146-46a4-afa7-3d67e0724746",
+        "title": "StarCraft II - Terran Theme",
+        "folder_path": "25ee70f2-4146-46a4-afa7-3d67e0724746",
+        "url": "https://www.youtube.com/watch?v=rpgDGCaMrW0",
+        "video_id": "rpgDGCaMrW0",
+        "start_time": 0,
+        "game_ids": [
+            239,
+            457,
+            458
+        ]
+    },
+    {
+        "id": "a92c0384-f544-458d-b543-b939c0146714",
+        "title": "Devil May Cry 5 - Bury the Light",
+        "folder_path": "a92c0384-f544-458d-b543-b939c0146714",
+        "url": "https://www.youtube.com/watch?v=Jrg9KxGNeJY",
+        "video_id": "Jrg9KxGNeJY",
+        "start_time": 120.0,
+        "game_ids": [
+            76253
+        ]
+    },
+    {
+        "id": "1fc697d1-063b-487c-805d-c66ebd1e049b",
+        "title": "Kirby Dream Land - Main Theme",
+        "folder_path": "1fc697d1-063b-487c-805d-c66ebd1e049b",
+        "url": "https://www.youtube.com/watch?v=3CS93CdMv_E",
+        "video_id": "3CS93CdMv_E",
+        "start_time": 0,
+        "game_ids": [
+            1063,
+            3717,
+            2713,
+            3721
+        ]
+    },
+    {
+        "id": "c7240f30-1d1e-4ad0-9528-bc0ed4fce6d0",
+        "title": "Yoshi's Island - Athletic",
+        "folder_path": "c7240f30-1d1e-4ad0-9528-bc0ed4fce6d0",
+        "url": "https://www.youtube.com/watch?v=oKJ2EZnnZRE",
+        "video_id": "oKJ2EZnnZRE",
+        "start_time": 0,
+        "game_ids": [
+            1073,
+            3213
+        ]
+    },
+    {
+        "id": "b31fe4ed-e8cd-4c08-addd-1fa9b27dfd7a",
+        "title": "Undertale - Asgore",
+        "folder_path": "b31fe4ed-e8cd-4c08-addd-1fa9b27dfd7a",
+        "url": "https://www.youtube.com/watch?v=zKLxc2NsNcg",
+        "video_id": "zKLxc2NsNcg",
+        "start_time": 16.0,
+        "game_ids": [
+            12517
+        ]
+    },
+    {
+        "id": "89ba6bc7-65d5-4075-8859-1e3b91202cb9",
+        "title": "Undertale - Mettaton",
+        "folder_path": "89ba6bc7-65d5-4075-8859-1e3b91202cb9",
+        "url": "https://www.youtube.com/watch?v=aMDFhjpMTEY",
+        "video_id": "aMDFhjpMTEY",
+        "start_time": 5.0,
+        "game_ids": [
+            12517
+        ]
+    },
+    {
+        "id": "a6ffd118-91b3-475b-8b87-c541a8a4a7ef",
+        "title": "Undertale - Megalovania",
+        "folder_path": "a6ffd118-91b3-475b-8b87-c541a8a4a7ef",
+        "url": "https://www.youtube.com/watch?v=wDgQdr8ZkTw",
+        "video_id": "wDgQdr8ZkTw",
+        "start_time": 0,
+        "game_ids": [
+            12517
+        ]
+    },
+    {
+        "id": "a9c07eec-e83d-4419-a960-3a0c307ac036",
+        "title": "Fire Emblem: Three Houses - God Shattering Star",
+        "folder_path": "a9c07eec-e83d-4419-a960-3a0c307ac036",
+        "url": "https://www.youtube.com/watch?v=bMfvZmhqW0A",
+        "video_id": "bMfvZmhqW0A",
+        "start_time": 35.0,
+        "game_ids": [
+            26845
+        ]
+    },
+    {
+        "id": "b797951b-3e84-408d-984a-7b8d78df251b",
+        "title": "Final Fantasy 13 - Blinded By Light",
+        "folder_path": "b797951b-3e84-408d-984a-7b8d78df251b",
+        "url": "https://www.youtube.com/watch?v=RPtq1Bpf6q4",
+        "video_id": "RPtq1Bpf6q4",
+        "start_time": 0,
+        "game_ids": [
+            389
+        ]
+    },
+    {
+        "id": "e3484d5d-a2ac-449d-a5bc-203bd27d8df8",
+        "title": "Batman Arkham City - Main Theme",
+        "folder_path": "e3484d5d-a2ac-449d-a5bc-203bd27d8df8",
+        "url": "https://www.youtube.com/watch?v=SXKrsJZWqK0",
+        "video_id": "SXKrsJZWqK0",
+        "start_time": 5.0,
+        "game_ids": [
+            501
+        ]
+    },
+    {
+        "id": "e0131302-6dd8-458e-9ffa-73519eba4be5",
+        "title": "Super Smash Bros: Brawl - Main Theme",
+        "folder_path": "e0131302-6dd8-458e-9ffa-73519eba4be5",
+        "url": "https://www.youtube.com/watch?v=zeKE0NHUtUw",
+        "video_id": "zeKE0NHUtUw",
+        "start_time": 0,
+        "game_ids": [
+            1628
+        ]
+    },
+    {
+        "id": "b5b5f1f9-c097-4ec0-a0b6-21f0f937280d",
+        "title": "Papers, Please - Main Theme",
+        "folder_path": "b5b5f1f9-c097-4ec0-a0b6-21f0f937280d",
+        "url": "https://www.youtube.com/watch?v=OBQE_TNI7zw",
+        "video_id": "OBQE_TNI7zw",
+        "start_time": 0,
+        "game_ids": [
+            2935
+        ]
+    },
+    {
+        "id": "4d73a1b8-0413-4a32-a709-d55d979a53c6",
+        "title": "Portal - Still Alive",
+        "folder_path": "4d73a1b8-0413-4a32-a709-d55d979a53c6",
+        "url": "https://www.youtube.com/watch?v=Y6ljFaKRTrI",
+        "video_id": "Y6ljFaKRTrI",
+        "start_time": 8.0,
+        "game_ids": [
+            71
+        ]
+    },
+    {
+        "id": "bb6e4ec6-556c-43b7-9701-d24a2524683c",
+        "title": "Dragon Quest - OVERTURE",
+        "folder_path": "bb6e4ec6-556c-43b7-9701-d24a2524683c",
+        "url": "https://www.youtube.com/watch?v=waH3uNlwMo4",
+        "video_id": "waH3uNlwMo4",
+        "start_time": 25.0,
+        "game_ids": [
+            1819,
+            11667
+        ]
+    },
+    {
+        "id": "b820319b-8160-4045-a94a-0561bf490da6",
+        "title": "Half Life 2 - Hazardous Environments",
+        "folder_path": "b820319b-8160-4045-a94a-0561bf490da6",
+        "url": "https://www.youtube.com/watch?v=UthQ2gR1bU4",
+        "video_id": "UthQ2gR1bU4",
+        "start_time": 20.0,
+        "game_ids": [
+            233
+        ]
+    },
+    {
+        "id": "03aa1ef4-a27d-4310-bb96-a753b7e1f154",
+        "title": "Death Stranding - BB's Theme",
+        "folder_path": "03aa1ef4-a27d-4310-bb96-a753b7e1f154",
+        "url": "https://www.youtube.com/watch?v=Ghk1RFr51xo",
+        "video_id": "Ghk1RFr51xo",
+        "start_time": 33.0,
+        "game_ids": [
+            19564
+        ]
+    },
+    {
+        "id": "2392ece5-f437-491c-8592-97c513694aa8",
+        "title": "Pok\u00e9mon Black & White - N Final Battle",
+        "folder_path": "2392ece5-f437-491c-8592-97c513694aa8",
+        "url": "https://www.youtube.com/watch?v=O0ajBL15Knk",
+        "video_id": "O0ajBL15Knk",
+        "start_time": 0,
+        "game_ids": [
+            1521,
+            1522
+        ]
+    },
+    {
+        "id": "04463271-1e1d-4c98-a22c-1d3ac8416e4d",
+        "title": "OMORI - Final Duet",
+        "folder_path": "04463271-1e1d-4c98-a22c-1d3ac8416e4d",
+        "url": "https://www.youtube.com/watch?v=8ya9EhvcNsA",
+        "video_id": "8ya9EhvcNsA",
+        "start_time": 20.0,
+        "game_ids": [
+            26673
+        ]
+    },
+    {
+        "id": "1822395c-d203-4da9-8597-ae78a2512c74",
+        "title": "Donkey Kong Country - Aquatic Ambience",
+        "folder_path": "1822395c-d203-4da9-8597-ae78a2512c74",
+        "url": "https://www.youtube.com/watch?v=-5rAjOjTGtc",
+        "video_id": "-5rAjOjTGtc",
+        "start_time": 120.0,
+        "game_ids": [
+            1090,
+            1092,
+            1094,
+            1096,
+            1100,
+            2923
+        ]
+    },
+    {
+        "id": "b07a757d-e5c1-46da-a457-10f86ddb4d85",
+        "title": "Conker's Bad Fur Day - The Great Mighty Poo Song",
+        "folder_path": "b07a757d-e5c1-46da-a457-10f86ddb4d85",
+        "url": "https://www.youtube.com/watch?v=Vdd4rBlsj2o",
+        "video_id": "Vdd4rBlsj2o",
+        "start_time": 34.0,
+        "game_ids": [
+            1286
+        ]
+    },
+    {
+        "id": "046a0a5b-68fa-4f36-b0bc-58a67f25ed4e",
+        "title": "Dark Souls 3 - Soul of Cinder",
+        "folder_path": "046a0a5b-68fa-4f36-b0bc-58a67f25ed4e",
+        "url": "https://www.youtube.com/watch?v=loWjsHMszrU",
+        "video_id": "loWjsHMszrU",
+        "start_time": 0,
+        "game_ids": [
+            11133
+        ]
+    },
+    {
+        "id": "3a770c47-be67-4cf7-9711-94e018451ce9",
+        "title": "Elden Ring - Regal Ancestor Spirit",
+        "folder_path": "3a770c47-be67-4cf7-9711-94e018451ce9",
+        "url": "https://www.youtube.com/watch?v=TNr-byxAyHg",
+        "video_id": "TNr-byxAyHg",
+        "start_time": 92.0,
+        "game_ids": [
+            119133
+        ]
+    },
+    {
+        "id": "d64cede7-1e2a-41d0-9518-32ff8157cf50",
+        "title": "Call of Duty: World at War - Russian Theme",
+        "folder_path": "d64cede7-1e2a-41d0-9518-32ff8157cf50",
+        "url": "https://www.youtube.com/watch?v=gfW1bkPI8Kc",
+        "video_id": "gfW1bkPI8Kc",
+        "start_time": 40.0,
+        "game_ids": [
+            625
+        ]
+    },
+    {
+        "id": "5b1534cb-25bc-4d49-b6c0-c6a55cf82435",
+        "title": "Battlefield - Theme",
+        "folder_path": "5b1534cb-25bc-4d49-b6c0-c6a55cf82435",
+        "url": "https://www.youtube.com/watch?v=vg0Tmydj29M",
+        "video_id": "vg0Tmydj29M",
+        "start_time": 0,
+        "game_ids": [
+            240,
+            335,
+            277,
+            349,
+            473,
+            352,
+            343,
+            1979,
+            7081,
+            18320,
+            83728
+        ]
+    },
+    {
+        "id": "b5348699-33b8-49a8-8c4c-4b709a4d595d",
+        "title": "MGS3 - Snake Eater",
+        "folder_path": "b5348699-33b8-49a8-8c4c-4b709a4d595d",
+        "url": "https://www.youtube.com/watch?v=m2OR_JaXDaM",
+        "video_id": "m2OR_JaXDaM",
+        "start_time": 0,
+        "game_ids": [
+            379
+        ]
+    },
+    {
+        "id": "83df2a49-8402-4726-a6bd-4b77441b815a",
+        "title": "Kingdom Hearts II - Scherzo Di Notte",
+        "folder_path": "83df2a49-8402-4726-a6bd-4b77441b815a",
+        "url": "https://www.youtube.com/watch?v=vXQKtCdF7_Q",
+        "video_id": "vXQKtCdF7_Q",
+        "start_time": 0,
+        "game_ids": [
+            1219,
+            1220,
+            1221,
+            1223,
+            2933
+        ]
+    },
+    {
+        "id": "b381e21e-0d5c-4cbf-8148-aeb19df50d61",
+        "title": "Zelda - Song of Storms",
+        "folder_path": "b381e21e-0d5c-4cbf-8148-aeb19df50d61",
+        "url": "https://www.youtube.com/watch?v=UtgHZaq0EGs",
+        "video_id": "UtgHZaq0EGs",
+        "start_time": 0,
+        "game_ids": [
+            1022,
+            1025,
+            1026,
+            1027,
+            1028,
+            1029,
+            1030,
+            1032,
+            1041,
+            1033,
+            1035,
+            1036,
+            1037,
+            1038,
+            534,
+            2909,
+            7346,
+            119388
+        ]
+    },
+    {
+        "id": "44137482-416c-4880-88f2-a234d1e103ee",
+        "title": "Super Mario: World - Ending Theme",
+        "folder_path": "44137482-416c-4880-88f2-a234d1e103ee",
+        "url": "https://www.youtube.com/watch?v=waKumDkYrDY",
+        "video_id": "waKumDkYrDY",
+        "start_time": 0,
+        "game_ids": [
+            1070
+        ]
+    },
+    {
+        "id": "3e235519-df9d-4f6b-83e3-804699d9fd5f",
+        "title": "Breath of the Wild - Riding - Night",
+        "folder_path": "3e235519-df9d-4f6b-83e3-804699d9fd5f",
+        "url": "https://www.youtube.com/watch?v=f2LgPr9xtAo",
+        "video_id": "f2LgPr9xtAo",
+        "start_time": 0,
+        "game_ids": [
+            7346
+        ]
+    },
+    {
+        "id": "909c712b-3402-48e1-94ac-1526fc10ebf3",
+        "title": "Resident Evil 4 - The Drive Extended",
+        "folder_path": "909c712b-3402-48e1-94ac-1526fc10ebf3",
+        "url": "https://www.youtube.com/watch?v=pwHP2bDhkeo",
+        "video_id": "pwHP2bDhkeo",
+        "start_time": 90.0,
+        "game_ids": [
+            974
+        ]
+    },
+    {
+        "id": "d6d49dfe-8d50-43fd-8968-e1b1ec6a78be",
+        "title": "Bowser's Inside Story - The Grand Finale",
+        "folder_path": "d6d49dfe-8d50-43fd-8968-e1b1ec6a78be",
+        "url": "https://www.youtube.com/watch?v=ouUeRx0OHPw",
+        "video_id": "ouUeRx0OHPw",
         "start_time": 0,
         "game_ids": [
             3363
+        ]
+    },
+    {
+        "id": "af12536f-4b3a-43a7-81bf-fb2a9ef0cb57",
+        "title": "God of War - Memories of Mother",
+        "folder_path": "af12536f-4b3a-43a7-81bf-fb2a9ef0cb57",
+        "url": "https://www.youtube.com/watch?v=rg8y4npCdY8",
+        "video_id": "rg8y4npCdY8",
+        "start_time": 169.0,
+        "game_ids": [
+            19560,
+            112875
+        ]
+    },
+    {
+        "id": "4d92dff6-2fe2-4007-ae81-7cf904056d83",
+        "title": "Ghost of Tsushima - The Way of the Ghost",
+        "folder_path": "4d92dff6-2fe2-4007-ae81-7cf904056d83",
+        "url": "https://www.youtube.com/watch?v=uoqWH32i1wg",
+        "video_id": "uoqWH32i1wg",
+        "start_time": 100.0,
+        "game_ids": [
+            75235
+        ]
+    },
+    {
+        "id": "8400b2ca-2c4d-496c-8dc0-e8c6030df83a",
+        "title": "Diablo - Tristram",
+        "folder_path": "8400b2ca-2c4d-496c-8dc0-e8c6030df83a",
+        "url": "https://www.youtube.com/watch?v=BxhPIRiMZWg",
+        "video_id": "BxhPIRiMZWg",
+        "start_time": 0,
+        "game_ids": [
+            125,
+            126,
+            120,
+            125165
+        ]
+    },
+    {
+        "id": "795615dc-9d82-4619-81c1-a4e572101194",
+        "title": "Fallout 3 - Main Theme",
+        "folder_path": "795615dc-9d82-4619-81c1-a4e572101194",
+        "url": "https://www.youtube.com/watch?v=l5SeNKLpbtE",
+        "video_id": "l5SeNKLpbtE",
+        "start_time": 10.0,
+        "game_ids": [
+            15
+        ]
+    },
+    {
+        "id": "c109aefe-01d9-40f0-8116-34dd33f09d90",
+        "title": "Team Fortress 2 - Main Theme",
+        "folder_path": "c109aefe-01d9-40f0-8116-34dd33f09d90",
+        "url": "https://www.youtube.com/watch?v=PDM2qukzKwg",
+        "video_id": "PDM2qukzKwg",
+        "start_time": 6.0,
+        "game_ids": [
+            891
+        ]
+    },
+    {
+        "id": "603b1209-fdcc-4ac6-a460-3f75763ae6fc",
+        "title": "Red Dead Redemption 2 - American Venom",
+        "folder_path": "603b1209-fdcc-4ac6-a460-3f75763ae6fc",
+        "url": "https://www.youtube.com/watch?v=-MK5ChLJTAk",
+        "video_id": "-MK5ChLJTAk",
+        "start_time": 20.0,
+        "game_ids": [
+            25076
+        ]
+    },
+    {
+        "id": "eec0c6ab-54b2-4ad4-9d3a-409a9a23be8d",
+        "title": "NFS Underground 2 - Riders on the Storm",
+        "folder_path": "eec0c6ab-54b2-4ad4-9d3a-409a9a23be8d",
+        "url": "https://www.youtube.com/watch?v=ubWL8VAPoYw",
+        "video_id": "ubWL8VAPoYw",
+        "start_time": 3.0,
+        "game_ids": [
+            97
+        ]
+    },
+    {
+        "id": "d5000fdc-8e96-4efc-9808-b7ac5ac18e08",
+        "title": "Phoenix Wright Ace Attorney - Pressing Pursuit",
+        "folder_path": "d5000fdc-8e96-4efc-9808-b7ac5ac18e08",
+        "url": "https://www.youtube.com/watch?v=lAWdWk6a2gg",
+        "video_id": "lAWdWk6a2gg",
+        "start_time": 0,
+        "game_ids": [
+            1429
+        ]
+    },
+    {
+        "id": "465f8317-4b7e-4ce4-87c6-2b5dfc4ab999",
+        "title": "Professor Layton - The Unwound Future",
+        "folder_path": "465f8317-4b7e-4ce4-87c6-2b5dfc4ab999",
+        "url": "https://www.youtube.com/watch?v=uWhIBWIF1WI",
+        "video_id": "uWhIBWIF1WI",
+        "start_time": 142.0,
+        "game_ids": [
+            1399
+        ]
+    },
+    {
+        "id": "7bc7efbd-1cbb-4717-9e52-84511e6d5aae",
+        "title": "Overwatch - Victory Theme",
+        "folder_path": "7bc7efbd-1cbb-4717-9e52-84511e6d5aae",
+        "url": "https://www.youtube.com/watch?v=ghk8O1yiY0I",
+        "video_id": "ghk8O1yiY0I",
+        "start_time": 0,
+        "game_ids": [
+            8173,
+            125174
+        ]
+    },
+    {
+        "id": "73ab622a-7c92-4b1b-9b58-b267567b7760",
+        "title": "Street Fighter - GUILE'S THEME",
+        "folder_path": "73ab622a-7c92-4b1b-9b58-b267567b7760",
+        "url": "https://www.youtube.com/watch?v=Iof5pRAIZmw",
+        "video_id": "Iof5pRAIZmw",
+        "start_time": 0,
+        "game_ids": [
+            6930,
+            3186,
+            18626,
+            884,
+            1065,
+            8258
+        ]
+    },
+    {
+        "id": "b7fa99d7-75fe-4b93-ab5f-e60a70331242",
+        "title": "Baldur's Gate 3 - Down By The River",
+        "folder_path": "b7fa99d7-75fe-4b93-ab5f-e60a70331242",
+        "url": "https://www.youtube.com/watch?v=zSVRtM1x9wQ",
+        "video_id": "zSVRtM1x9wQ",
+        "start_time": 10.0,
+        "game_ids": [
+            119171
+        ]
+    },
+    {
+        "id": "eb091c3d-843f-4b97-84c9-f734c13f47fe",
+        "title": "DuckTales Music - The Moon Theme",
+        "folder_path": "eb091c3d-843f-4b97-84c9-f734c13f47fe",
+        "url": "https://www.youtube.com/watch?v=KF32DRg9opA",
+        "video_id": "KF32DRg9opA",
+        "start_time": 0,
+        "game_ids": [
+            6487
+        ]
+    },
+    {
+        "id": "4154f46d-fdd2-4fe7-be6a-c082118e64e1",
+        "title": "Final Fantasy VII - One-Winged Angel",
+        "folder_path": "4154f46d-fdd2-4fe7-be6a-c082118e64e1",
+        "url": "https://www.youtube.com/watch?v=mYdf0yqK_Fc",
+        "video_id": "mYdf0yqK_Fc",
+        "start_time": 203.0,
+        "game_ids": [
+            427
+        ]
+    },
+    {
+        "id": "12f5528d-9468-4b7e-bc64-47c0f4612265",
+        "title": "Alan Wake 2 - Old Gods of Asgard",
+        "folder_path": "12f5528d-9468-4b7e-bc64-47c0f4612265",
+        "url": "https://www.youtube.com/watch?v=uxs_HYw_mLk",
+        "video_id": "uxs_HYw_mLk",
+        "start_time": 130.0,
+        "game_ids": [
+            185246
+        ]
+    },
+    {
+        "id": "f8ef3048-2503-4d5a-a090-405a43366556",
+        "title": "Helldivers 2 - A Cup Of Liber-Tea",
+        "folder_path": "f8ef3048-2503-4d5a-a090-405a43366556",
+        "url": "https://www.youtube.com/watch?v=R5hCkh2AH58",
+        "video_id": "R5hCkh2AH58",
+        "start_time": 58.0,
+        "game_ids": [
+            250616
+        ]
+    },
+    {
+        "id": "47b5e61e-70b1-4e56-859a-5e374bc9fff6",
+        "title": "Destiny 2 - Journey",
+        "folder_path": "47b5e61e-70b1-4e56-859a-5e374bc9fff6",
+        "url": "https://www.youtube.com/watch?v=z0n8LsYnaic",
+        "video_id": "z0n8LsYnaic",
+        "start_time": 353.0,
+        "game_ids": [
+            25657
+        ]
+    },
+    {
+        "id": "fca5617c-d910-4f8b-93cc-17cb0ca25bd7",
+        "title": "Shadow of the Colossus - The Opened Way",
+        "folder_path": "fca5617c-d910-4f8b-93cc-17cb0ca25bd7",
+        "url": "https://www.youtube.com/watch?v=36M-NwEFSOc",
+        "video_id": "36M-NwEFSOc",
+        "start_time": 0,
+        "game_ids": [
+            2207
+        ]
+    },
+    {
+        "id": "939860db-fdc8-4460-84bd-9079bdff49b5",
+        "title": "Sonic The Hedgehog - Green Hill Zone",
+        "folder_path": "939860db-fdc8-4460-84bd-9079bdff49b5",
+        "url": "https://www.youtube.com/watch?v=G-i8HYi1QH0",
+        "video_id": "G-i8HYi1QH0",
+        "start_time": 0,
+        "game_ids": [
+            3192,
+            4438,
+            5452,
+            6797,
+            9475,
+            6283,
+            4156,
+            5169,
+            2267,
+            506,
+            2174,
+            21062,
+            21063
+        ]
+    },
+    {
+        "id": "60a0ae13-2dae-4472-b6e5-a1c0633487fd",
+        "title": "Celeste - Reach for the Summit",
+        "folder_path": "60a0ae13-2dae-4472-b6e5-a1c0633487fd",
+        "url": "https://www.youtube.com/watch?v=iDVM9KED46Q",
+        "video_id": "iDVM9KED46Q",
+        "start_time": 0,
+        "game_ids": [
+            26226
+        ]
+    },
+    {
+        "id": "4c6ea367-455a-4ece-b2c6-b89d1729587e",
+        "title": "Hearthstone Soundtrack - Main Title",
+        "folder_path": "4c6ea367-455a-4ece-b2c6-b89d1729587e",
+        "url": "https://www.youtube.com/watch?v=WXxy3Y8daks",
+        "video_id": "WXxy3Y8daks",
+        "start_time": 0,
+        "game_ids": [
+            1279
+        ]
+    },
+    {
+        "id": "20928321-bdd5-4597-844d-3ce7850d4e63",
+        "title": "Age of Empires 2 - Main Theme",
+        "folder_path": "20928321-bdd5-4597-844d-3ce7850d4e63",
+        "url": "https://www.youtube.com/watch?v=OSuba0LSkwQ",
+        "video_id": "OSuba0LSkwQ",
+        "start_time": 0,
+        "game_ids": [
+            289,
+            327
+        ]
+    },
+    {
+        "id": "b1afda82-a979-4f7d-8e6f-192db1cdb71b",
+        "title": "Halo",
+        "folder_path": "b1afda82-a979-4f7d-8e6f-192db1cdb71b",
+        "url": "https://www.youtube.com/watch?v=0jXTBAGv9ZQ",
+        "video_id": "0jXTBAGv9ZQ",
+        "start_time": 0,
+        "game_ids": [
+            740,
+            986,
+            987,
+            98,
+            988,
+            989,
+            990,
+            991,
+            6803,
+            103281
+        ]
+    },
+    {
+        "id": "6da1ed86-cf40-46ab-b8c0-6449ed08f14f",
+        "title": "Yakuza - Baka Mitai",
+        "folder_path": "6da1ed86-cf40-46ab-b8c0-6449ed08f14f",
+        "url": "https://www.youtube.com/watch?v=g3jCAyPai2Y",
+        "video_id": "g3jCAyPai2Y",
+        "start_time": 65.0,
+        "game_ids": [
+            11397,
+            36550
+        ]
+    },
+    {
+        "id": "beec0c47-6f1e-4173-bc90-59dfd34b11c6",
+        "title": "NieR: Automata - Amusement Park",
+        "folder_path": "beec0c47-6f1e-4173-bc90-59dfd34b11c6",
+        "url": "https://www.youtube.com/watch?v=KTsAmq9h7iM",
+        "video_id": "KTsAmq9h7iM",
+        "start_time": 0,
+        "game_ids": [
+            11208
+        ]
+    },
+    {
+        "id": "caf12387-c1cc-4f41-b00d-b9b625c783d9",
+        "title": "NieR: \u907a\u30b5\u30ec\u30bf\u5834\u6240/\u659c\u5149",
+        "folder_path": "caf12387-c1cc-4f41-b00d-b9b625c783d9",
+        "url": "https://www.youtube.com/watch?v=hMw-DUnR10s",
+        "video_id": "hMw-DUnR10s",
+        "start_time": 70.0,
+        "game_ids": [
+            7120
+        ]
+    },
+    {
+        "id": "51fa6084-bb5d-4428-87f3-c888a946a7ab",
+        "title": "Castlevania II - Bloody Tears (Day Theme)",
+        "folder_path": "51fa6084-bb5d-4428-87f3-c888a946a7ab",
+        "url": "https://www.youtube.com/watch?v=e2oZtvjg5oA",
+        "video_id": "e2oZtvjg5oA",
+        "start_time": 0,
+        "game_ids": [
+            1114,
+            1116,
+            1139,
+            1128,
+            1132,
+            1133,
+            1134,
+            1136,
+            491,
+            1182
+        ]
+    },
+    {
+        "id": "e8f37183-7ac8-4ede-aac9-c426131ecba7",
+        "title": "Five Nights at Freddy's",
+        "folder_path": "e8f37183-7ac8-4ede-aac9-c426131ecba7",
+        "url": "https://www.youtube.com/watch?v=EuuZg3TUOlU",
+        "video_id": "EuuZg3TUOlU",
+        "start_time": 0,
+        "game_ids": [
+            8499,
+            9195
+        ]
+    },
+    {
+        "id": "eb71b553-86cf-4d32-8bbe-34bd0b7f1124",
+        "title": "Disco Elysium - Whirling In Rags",
+        "folder_path": "eb71b553-86cf-4d32-8bbe-34bd0b7f1124",
+        "url": "https://www.youtube.com/watch?v=_9-SgkvM8Mw",
+        "video_id": "_9-SgkvM8Mw",
+        "start_time": 0,
+        "game_ids": [
+            26472
+        ]
+    },
+    {
+        "id": "0e331448-7e7a-4715-8b2c-9cc34018ae82",
+        "title": "L.A. Noire - Menu Theme",
+        "folder_path": "0e331448-7e7a-4715-8b2c-9cc34018ae82",
+        "url": "https://www.youtube.com/watch?v=7bW75OwVXZI",
+        "video_id": "7bW75OwVXZI",
+        "start_time": 0,
+        "game_ids": [
+            109
+        ]
+    },
+    {
+        "id": "7eb144c8-83ab-41a9-b4bb-a44a616c4d5a",
+        "title": "LittleBigPlanet - Left Bank Two",
+        "folder_path": "7eb144c8-83ab-41a9-b4bb-a44a616c4d5a",
+        "url": "https://www.youtube.com/watch?v=-9w7A39Ggz0",
+        "video_id": "-9w7A39Ggz0",
+        "start_time": 0,
+        "game_ids": [
+            1058,
+            2140,
+            1363,
+            7330,
+            9174,
+            122120,
+            121760
+        ]
+    },
+    {
+        "id": "a1352ff3-621b-4d32-b97c-5f08d3732333",
+        "title": "Crash Bandicoot - Theme",
+        "folder_path": "a1352ff3-621b-4d32-b97c-5f08d3732333",
+        "url": "https://www.youtube.com/watch?v=4i8qAZOu5-g",
+        "video_id": "4i8qAZOu5-g",
+        "start_time": 0,
+        "game_ids": [
+            1185,
+            1186,
+            1187,
+            1192,
+            1195,
+            1188,
+            1189,
+            1190,
+            3153,
+            135254
+        ]
+    },
+    {
+        "id": "0deff36e-577d-48d9-8f3b-91a5b691da50",
+        "title": "Bayonetta - Let's Dance Boys!",
+        "folder_path": "0deff36e-577d-48d9-8f3b-91a5b691da50",
+        "url": "https://www.youtube.com/watch?v=YCUe7UyA_Ec",
+        "video_id": "YCUe7UyA_Ec",
+        "start_time": 0,
+        "game_ids": [
+            2136,
+            2135
+        ]
+    },
+    {
+        "id": "974a95ca-225b-4541-bba3-3605f2b99c89",
+        "title": "Assassin's Creed - Ezio's Family",
+        "folder_path": "974a95ca-225b-4541-bba3-3605f2b99c89",
+        "url": "https://www.youtube.com/watch?v=D1oh9GnOz5g",
+        "video_id": "D1oh9GnOz5g",
+        "start_time": 0,
+        "game_ids": [
+            127,
+            113,
+            537
+        ]
+    },
+    {
+        "id": "0cfdbf85-1887-40a3-8c6a-d5bd7beb6112",
+        "title": "Sonic - Drowning",
+        "folder_path": "0cfdbf85-1887-40a3-8c6a-d5bd7beb6112",
+        "url": "https://www.youtube.com/watch?v=9Yw5jkAHgME",
+        "video_id": "9Yw5jkAHgME",
+        "start_time": 0,
+        "game_ids": [
+            3192
+        ]
+    },
+    {
+        "id": "62a283bd-06cf-44d1-a657-f4670c4e4a46",
+        "title": "Persona 3 - It's Going Down Now",
+        "folder_path": "62a283bd-06cf-44d1-a657-f4670c4e4a46",
+        "url": "https://www.youtube.com/watch?v=2KuWjZD6PBA",
+        "video_id": "2KuWjZD6PBA",
+        "start_time": 30.0,
+        "game_ids": [
+            9577
+        ]
+    },
+    {
+        "id": "572eb744-4b8d-4628-ba92-6efe7bfa29ad",
+        "title": "Skyrim - Secunda",
+        "folder_path": "572eb744-4b8d-4628-ba92-6efe7bfa29ad",
+        "url": "https://www.youtube.com/watch?v=iqkQRgGdAPo",
+        "video_id": "iqkQRgGdAPo",
+        "start_time": 35.0,
+        "game_ids": [
+            472
+        ]
+    },
+    {
+        "id": "84f6a6c4-4933-4a70-a924-1d012daf2c45",
+        "title": "Binding of Isaac - Basement",
+        "folder_path": "84f6a6c4-4933-4a70-a924-1d012daf2c45",
+        "url": "https://www.youtube.com/watch?v=izHxUkF4ZAQ",
+        "video_id": "izHxUkF4ZAQ",
+        "start_time": 0,
+        "game_ids": [
+            2132
+        ]
+    },
+    {
+        "id": "f7190ee9-065a-43ea-aa83-46d36ca70553",
+        "title": "Cuphead - The King's Court",
+        "folder_path": "f7190ee9-065a-43ea-aa83-46d36ca70553",
+        "url": "https://www.youtube.com/watch?v=KsReWI83IC8",
+        "video_id": "KsReWI83IC8",
+        "start_time": 0,
+        "game_ids": [
+            9061
+        ]
+    },
+    {
+        "id": "f5aa3d9f-92d3-4119-8e8d-c3577ca754f5",
+        "title": "Hollow Knight - Nightmare King",
+        "folder_path": "f5aa3d9f-92d3-4119-8e8d-c3577ca754f5",
+        "url": "https://www.youtube.com/watch?v=Mq8E_1LkoAc",
+        "video_id": "Mq8E_1LkoAc",
+        "start_time": 1.0,
+        "game_ids": [
+            14593
+        ]
+    },
+    {
+        "id": "707090fc-954c-4573-bb4b-2f460f3811d7",
+        "title": "Wario Ware Touched! - Ashley's Theme",
+        "folder_path": "707090fc-954c-4573-bb4b-2f460f3811d7",
+        "url": "https://www.youtube.com/watch?v=8lsvuvz9aNY",
+        "video_id": "8lsvuvz9aNY",
+        "start_time": 4.0,
+        "game_ids": [
+            1072
+        ]
+    },
+    {
+        "id": "8ef1aa98-5825-4620-888a-8bccf96e58c5",
+        "title": "Bloodborne - Gehrman, the First Hunter",
+        "folder_path": "8ef1aa98-5825-4620-888a-8bccf96e58c5",
+        "url": "https://www.youtube.com/watch?v=svXWUR0Yjcc",
+        "video_id": "svXWUR0Yjcc",
+        "start_time": 50.0,
+        "game_ids": [
+            7334
+        ]
+    },
+    {
+        "id": "3f8b42f4-3fc3-4495-8960-4c901e42803e",
+        "title": "Vampire Survivors - Copper Green Intent",
+        "folder_path": "3f8b42f4-3fc3-4495-8960-4c901e42803e",
+        "url": "https://www.youtube.com/watch?v=r-_W2V3ndHU",
+        "video_id": "r-_W2V3ndHU",
+        "start_time": 0,
+        "game_ids": [
+            186725
+        ]
+    },
+    {
+        "id": "41d66b68-791e-43ff-8f87-38aa54347ec1",
+        "title": "Minecraft - Aria Math",
+        "folder_path": "41d66b68-791e-43ff-8f87-38aa54347ec1",
+        "url": "https://www.youtube.com/watch?v=atgjKEgSqSU",
+        "video_id": "atgjKEgSqSU",
+        "start_time": 0,
+        "game_ids": [
+            121
+        ]
+    },
+    {
+        "id": "4f6ca3d9-9eca-4166-bd3f-f3d28e296e40",
+        "title": "Wii Sports - Title",
+        "folder_path": "4f6ca3d9-9eca-4166-bd3f-f3d28e296e40",
+        "url": "https://www.youtube.com/watch?v=2qvAxPqy2wA",
+        "video_id": "2qvAxPqy2wA",
+        "start_time": 0,
+        "game_ids": [
+            2181,
+            2182
+        ]
+    },
+    {
+        "id": "afb694ac-ad30-40c2-aaf2-1f017ee2c19e",
+        "title": "Warframe - We All Lift Together",
+        "folder_path": "afb694ac-ad30-40c2-aaf2-1f017ee2c19e",
+        "url": "https://www.youtube.com/watch?v=mPTCq3LiZSE",
+        "video_id": "mPTCq3LiZSE",
+        "start_time": 43.0,
+        "game_ids": [
+            2903
+        ]
+    },
+    {
+        "id": "1d5caf1e-8d10-402a-b56a-43f45b506381",
+        "title": "Crypt of the Necrodancer - Disco Descent",
+        "folder_path": "1d5caf1e-8d10-402a-b56a-43f45b506381",
+        "url": "https://www.youtube.com/watch?v=12R48a6DNz8",
+        "video_id": "12R48a6DNz8",
+        "start_time": 0,
+        "game_ids": [
+            7886
+        ]
+    },
+    {
+        "id": "7c1b2d73-a01e-433f-a119-c31971fbe4c6",
+        "title": "Outer Wilds - Travelers",
+        "folder_path": "7c1b2d73-a01e-433f-a119-c31971fbe4c6",
+        "url": "https://www.youtube.com/watch?v=YR_wIb_n4ZU",
+        "video_id": "YR_wIb_n4ZU",
+        "start_time": 73.0,
+        "game_ids": [
+            11737
+        ]
+    },
+    {
+        "id": "7e803930-ee3e-46e9-8936-d0d68005aa74",
+        "title": "Hotline Miami - Hydrogen",
+        "folder_path": "7e803930-ee3e-46e9-8936-d0d68005aa74",
+        "url": "https://www.youtube.com/watch?v=SNE2oCZH_4k",
+        "video_id": "SNE2oCZH_4k",
+        "start_time": 70.0,
+        "game_ids": [
+            1384,
+            2126
+        ]
+    },
+    {
+        "id": "7e3b900f-83f0-4192-8d82-8b915fe5c42c",
+        "title": "Pok\u00e9mon Diamond, Pearl & Platinum - Cynthia",
+        "folder_path": "7e3b900f-83f0-4192-8d82-8b915fe5c42c",
+        "url": "https://www.youtube.com/watch?v=rXefFHRgyE0",
+        "video_id": "rXefFHRgyE0",
+        "start_time": 14.0,
+        "game_ids": [
+            1518,
+            1560
+        ]
+    },
+    {
+        "id": "19af6836-86b9-4d4c-8980-f11ec4aa8881",
+        "title": "Lies of P - Feel",
+        "folder_path": "19af6836-86b9-4d4c-8980-f11ec4aa8881",
+        "url": "https://www.youtube.com/watch?v=FRdRx1OMpJQ",
+        "video_id": "FRdRx1OMpJQ",
+        "start_time": 8.0,
+        "game_ids": [
+            148241
         ]
     }
 ]

@@ -4,7 +4,7 @@ import Link from "next/link";
 import data from "@/lib/trivia-linking.json";
 
 // Compute the number of days since October 13, 2024
-const startDate = new Date("2024-10-13");
+const startDate = new Date("2024-10-16");
 const today = new Date();
 // Calculate the difference in time
 const diffTime = today.getTime() - startDate.getTime();
@@ -27,7 +27,7 @@ const formattedDate = `${day}-${month}-${year}`;
 
 export default function Page() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden pb-10">
       <div className="place-content-center grid gap-3 mt-40">
         <Link href={todaysTuneLink}>
           <GlareCard className="flex flex-col items-start justify-end py-8 px-6">

@@ -45,8 +45,8 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-// Compute the number of days since October 13, 2024
-const startDate = new Date("2024-10-13");
+// Compute the number of days since October 16, 2024
+const startDate = new Date("2024-10-16");
 const today = new Date();
 // Calculate the difference in time
 const diffTime = today.getTime() - startDate.getTime();
