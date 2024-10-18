@@ -15,6 +15,8 @@ export default function Tune({ params }: { params: { id: string } }) {
       : "5",
   );
 
+  const [isPlaying, setIsPlaying] = useState(false);
+
   // State to track the user's guess history, initializing from localStorage if available
   const [guessHistory, setGuessHistory] = useState<string>(
     typeof window !== "undefined"
@@ -121,12 +123,14 @@ export default function Tune({ params }: { params: { id: string } }) {
 
       {progress !== "passed" && progress !== "failed" ? (
         <div className="grid place-content-center gap-4 transform -translate-y-5 pt-2">
-          <div className="relative">
+          <div className="relative" onClick={() => setIsPlaying(true)}>
             <Suspense fallback={<div>Loading...</div>}>
               <SoundVisualizer audio={audio} length={parseInt(progress)} />
             </Suspense>
           </div>
-
+          <div className="grid place-content-center 3 pb-5">
+            {isPlaying ? "" : "click on the visualizer to play the tune"}
+          </div>
           <div className="grid place-content-center gap-4 mt-4 sm:mt-6 lg:mt-8 xl:mt-10">
             <div className="flex justify-center gap-3 sm:gap-4 lg:gap-5">
               <div className={`h-8 w-8 rounded-lg ${progressIndicator[0]}`} />
@@ -144,7 +148,7 @@ export default function Tune({ params }: { params: { id: string } }) {
           <div className="grid place-content-center gap-4 pt-2">
             <YTPlayer video_id={tuneData.video_id} />
           </div>
-          <div className="grid place-content-center 3 pt-2">
+          <div className="grid place-content-center 3 pt-2 font-bold">
             {tuneData.title}
           </div>
           <div className="flex justify-center gap-3 sm:gap-4 lg:gap-5 p-10">
