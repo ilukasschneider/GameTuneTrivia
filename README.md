@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Game Tune Trivia
 
-## Getting Started
+## Overview
 
-First, run the development server:
+**Game Tune Trivia** is a web application that combines my love for video game soundtracks with the challenge of trivia. This project was created as my first foray into Next.js and full-stack development. It serves as a platform for users to test their knowledge of video game music by guessing the game from which a particular tune originates.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Game Tune Trivia is a fun and educational project that allowed me to dive into Next.js and full-stack development. It blends my love for video game soundtracks with the excitement of learning new technologies. I hope you enjoy using it as much as I enjoyed building it! As this was my first project using Next.js, React, Tailwind CSS, and TypeScript, the code might not be the best and there are definitely areas for improvement.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Daily Tune Challenge**: Users can test their music knowledge with a new tune every day.
+- **Random Tune Mode**: Users can challenge themselves with a random tune from the archive.
+- **Progress Tracking**: The app tracks user progress and guess history.
+- **Audio Visualizer**: An engaging audio visualizer enhances the user experience.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologies Used
 
-## Learn More
+- **Next.js**: A React framework for building server-side rendered applications.
+- **React**: A JavaScript library for building user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **TypeScript**: A typed superset of JavaScript that enhances code quality and maintainability.
 
-To learn more about Next.js, take a look at the following resources:
+## Acknowledgements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Special thanks to my friend Nikoley for contributing to the music selection for this project.
+- Credit to [Max E. Mitchell](https://www.maxemitchell.com/code_art/unknown_lines) for his audio visualizer, Unknown Lines, which was used in this project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
