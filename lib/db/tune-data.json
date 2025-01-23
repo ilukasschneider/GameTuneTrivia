@@ -1214,5 +1214,213 @@
         "game_ids": [
             148241
         ]
+    },
+    {
+        "id": "5edc3eea-612b-4d84-a206-9f9ff3f15995",
+        "title": "Geometry Dash - Stereo Madness",
+        "folder_path": "5edc3eea-612b-4d84-a206-9f9ff3f15995",
+        "url": "https://www.youtube.com/watch?v=1WpR8F2pcxg",
+        "video_id": "1WpR8F2pcxg",
+        "start_time": 0,
+        "game_ids": [
+            11642
+        ]
+    },
+    {
+        "id": "8da647ed-6f84-4280-90b1-2ddb5525b53b",
+        "title": "Tekken 3 - Main Theme",
+        "folder_path": "8da647ed-6f84-4280-90b1-2ddb5525b53b",
+        "url": "https://www.youtube.com/watch?v=Dpf_rm9fpzE",
+        "video_id": "Dpf_rm9fpzE",
+        "start_time": 25.0,
+        "game_ids": [
+            1244
+        ]
+    },
+    {
+        "id": "705ef230-bd32-4279-963d-6be296641a99",
+        "title": "Don't Starve - Main Theme",
+        "folder_path": "705ef230-bd32-4279-963d-6be296641a99",
+        "url": "https://www.youtube.com/watch?v=HL4tOF8lCds",
+        "video_id": "HL4tOF8lCds",
+        "start_time": 0,
+        "game_ids": [
+            3152,
+            17832
+        ]
+    },
+    {
+        "id": "13dcf90f-2654-4c6b-8fa0-c47a00816e36",
+        "title": "Sid Meier's Civilization VI",
+        "folder_path": "13dcf90f-2654-4c6b-8fa0-c47a00816e36",
+        "url": "https://www.youtube.com/watch?v=WQYN2P3E06s",
+        "video_id": "WQYN2P3E06s",
+        "start_time": 45.0,
+        "game_ids": [
+            19130
+        ]
+    },
+    {
+        "id": "20050258-1b45-4c12-9db8-db54ee0fca3b",
+        "title": "Sid Meier's Civilization IV - Main Theme",
+        "folder_path": "20050258-1b45-4c12-9db8-db54ee0fca3b",
+        "url": "https://www.youtube.com/watch?v=IJiHDmyhE1A",
+        "video_id": "IJiHDmyhE1A",
+        "start_time": 21.0,
+        "game_ids": [
+            293
+        ]
+    },
+    {
+        "id": "788f1557-edfd-4200-99e2-1a6f99ee9335",
+        "title": "Furi - My Only Chance",
+        "folder_path": "788f1557-edfd-4200-99e2-1a6f99ee9335",
+        "url": "https://www.youtube.com/watch?v=SeAAi7jWOl8",
+        "video_id": "SeAAi7jWOl8",
+        "start_time": 28.0,
+        "game_ids": [
+            17026
+        ]
+    },
+    {
+        "id": "7bb5eeb2-88f7-4054-bb75-59ac37f14cca",
+        "title": "Journey - Main Theme",
+        "folder_path": "7bb5eeb2-88f7-4054-bb75-59ac37f14cca",
+        "url": "https://www.youtube.com/watch?v=khQKlT6C-Mg",
+        "video_id": "khQKlT6C-Mg",
+        "start_time": 61.0,
+        "game_ids": [
+            1352
+        ]
+    },
+    {
+        "id": "c5122455-125e-4c3e-99d5-463454af9fb4",
+        "title": "The Finals - S02",
+        "folder_path": "c5122455-125e-4c3e-99d5-463454af9fb4",
+        "url": "https://www.youtube.com/watch?v=vo6zyagSinc",
+        "video_id": "vo6zyagSinc",
+        "start_time": 0,
+        "game_ids": [
+            214417
+        ]
+    },
+    {
+        "id": "0038b488-ec34-4080-9bc9-e41421ad0e8d",
+        "title": "Metro Last Night - Main Theme",
+        "folder_path": "0038b488-ec34-4080-9bc9-e41421ad0e8d",
+        "url": "https://www.youtube.com/watch?v=-7H0QfU5J04",
+        "video_id": "-7H0QfU5J04",
+        "start_time": 40.0,
+        "game_ids": [
+            539,
+            495,
+            37016
+        ]
+    },
+    {
+        "id": "dff71051-501e-47ea-a874-4786c89eac33",
+        "title": "S.T.A.L.K.E.R. - Bandit Radio",
+        "folder_path": "dff71051-501e-47ea-a874-4786c89eac33",
+        "url": "https://www.youtube.com/watch?v=j_podzD4cSA",
+        "video_id": "j_podzD4cSA",
+        "start_time": 0,
+        "game_ids": [
+            320,
+            4840,
+            7605
+        ]
+    },
+    {
+        "id": "4a6ffc43-006f-451e-bf48-e69cfe7d7913",
+        "title": "Sea of Thieves - Main Song",
+        "folder_path": "4a6ffc43-006f-451e-bf48-e69cfe7d7913",
+        "url": "https://www.youtube.com/watch?v=xcaGxxImVc0",
+        "video_id": "xcaGxxImVc0",
+        "start_time": 0,
+        "game_ids": [
+            11137
+        ]
+    },
+    {
+        "id": "16782289-864d-4908-a318-479af4a3ce2b",
+        "title": "Fall Guys - Main Theme",
+        "folder_path": "16782289-864d-4908-a318-479af4a3ce2b",
+        "url": "https://www.youtube.com/watch?v=Kl2cTNMNlSc",
+        "video_id": "Kl2cTNMNlSc",
+        "start_time": 10.0,
+        "game_ids": [
+            119313
+        ]
+    },
+    {
+        "id": "d326a941-7ddc-42e3-8d56-b992acfe405a",
+        "title": "SuperHot SuperHot SuperHot",
+        "folder_path": "d326a941-7ddc-42e3-8d56-b992acfe405a",
+        "url": "https://www.youtube.com/watch?v=uWDiLpH4N30",
+        "video_id": "uWDiLpH4N30",
+        "start_time": 8.0,
+        "game_ids": [
+            7205
+        ]
+    },
+    {
+        "id": "7a77b9f3-e920-4545-83a1-d568ecced49d",
+        "title": "ARK Survival Evolved - Main Theme",
+        "folder_path": "7a77b9f3-e920-4545-83a1-d568ecced49d",
+        "url": "https://www.youtube.com/watch?v=FDqXO7XOw7c",
+        "video_id": "FDqXO7XOw7c",
+        "start_time": 42.0,
+        "game_ids": [
+            10239
+        ]
+    },
+    {
+        "id": "2d68cb10-20cf-47ea-b481-e4c77d338296",
+        "title": "Hyper Light Drifter - Panacea",
+        "folder_path": "2d68cb10-20cf-47ea-b481-e4c77d338296",
+        "url": "https://www.youtube.com/watch?v=wEA5Xuc4-a4",
+        "video_id": "wEA5Xuc4-a4",
+        "start_time": 0,
+        "game_ids": [
+            9806
+        ]
+    },
+    {
+        "id": "32ef61c8-a45b-406f-a9c9-d2609ba2e745",
+        "title": "Bioshock - The Ocean on His Shoulders",
+        "folder_path": "32ef61c8-a45b-406f-a9c9-d2609ba2e745",
+        "url": "https://www.youtube.com/watch?v=wp6QpMWaKpE",
+        "video_id": "wp6QpMWaKpE",
+        "start_time": 30.0,
+        "game_ids": [
+            20,
+            21
+        ]
+    },
+    {
+        "id": "3616b157-a43e-4199-afa0-19eaec95aaa4",
+        "title": "Plants vs. Zombies - Main Theme",
+        "folder_path": "3616b157-a43e-4199-afa0-19eaec95aaa4",
+        "url": "https://www.youtube.com/watch?v=zovPjOeK-aE",
+        "video_id": "zovPjOeK-aE",
+        "start_time": 0,
+        "game_ids": [
+            1277,
+            3145,
+            3146,
+            11148
+        ]
+    },
+    {
+        "id": "ff2ec68e-68dd-4e1a-b5b1-5461e7d8b2e1",
+        "title": "Mirror's Edge - Main Theme",
+        "folder_path": "ff2ec68e-68dd-4e1a-b5b1-5461e7d8b2e1",
+        "url": "https://www.youtube.com/watch?v=YP3M9_gICsc",
+        "video_id": "YP3M9_gICsc",
+        "start_time": 0,
+        "game_ids": [
+            1051,
+            2112
+        ]
     }
 ]
