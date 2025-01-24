@@ -100,20 +100,28 @@ export default function RandomTune({ params }: { params: { id: string } }) {
             <Suspense fallback={<div>Loading...</div>}>
               <SoundVisualizer audio={audio} length={parseInt(progress)} />
             </Suspense>
-            <div className="grid place-content-center 3 pb-5">
-              {isPlaying || progress != "5"
-                ? ""
-                : "click on the visualizer to play the tune"}
-              {progress === "15" ? (
-                <div className="grid place-content-center">
-                  {gameInformation[1]}
-                </div>
-              ) : (
-                ""
-              )}
-              {progress === "10" || progress === "15"
-                ? gameInformation[0].join(", ")
-                : ""}
+            <div className="grid place-items-center gap-2 pb-5 -mt-12">
+              {/* Reserve space for “click on the visualizer…” text.
+                  It will remain centered but invisible when the condition is false. */}
+              <span
+                className={isPlaying || progress !== "5" ? "invisible" : ""}
+              >
+                click on the visualizer to play the tune
+              </span>
+
+              {/* Reserve space for gameInformation[1], show only if progress === "15". */}
+              <div className={progress === "15" ? "" : "invisible"}>
+                {gameInformation[1]}
+              </div>
+
+              {/* Reserve space for gameInformation[0], show only if progress === "10" or "15". */}
+              <span
+                className={
+                  progress === "10" || progress === "15" ? "" : "invisible"
+                }
+              >
+                {gameInformation[0].join(", ")}
+              </span>
             </div>
           </div>
 
