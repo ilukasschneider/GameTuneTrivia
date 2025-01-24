@@ -3,7 +3,7 @@ import { HoverEffect } from "@/components/ui/archive/card-hover-effect";
 import data from "@/lib/trivia-linking.json";
 
 // Compute the number of days since October 13, 2024
-const startDate = new Date("2025-01-22");
+const startDate = new Date("2025-01-01");
 const today = new Date();
 
 // Calculate the difference in time

@@ -2,7 +2,7 @@
 import GameSearchbar from "@/components/ui/game-ui/game-searchbar";
 import SoundVisualizer from "@/components/ui/game-ui/sound-visualizer";
 import { Button } from "@/components/ui/button";
-import { getTuneData } from "@/lib/db/db-utils";
+import { getTuneData, getGameInfos } from "@/lib/db/db-utils";
 import { Suspense, useEffect, useState } from "react";
 import { YTPlayer } from "@/components/ui/audio-player/yt-player";
 
@@ -53,6 +53,7 @@ export default function RandomTune({ params }: { params: { id: string } }) {
   const correctGameIDs = tuneData.game_ids;
   const audio = `/static/audio/${tuneData.id}/audio.mp3`;
   const [selectedGameID, setSelectedGameID] = useState(-1);
+  const gameInformation = getGameInfos(correctGameIDs[0]);
 
   // Function to check the user's guess
   function checkGuess() {
@@ -100,7 +101,19 @@ export default function RandomTune({ params }: { params: { id: string } }) {
               <SoundVisualizer audio={audio} length={parseInt(progress)} />
             </Suspense>
             <div className="grid place-content-center 3 pb-5">
-              {isPlaying ? "" : "click on the visualizer to play the tune"}
+              {isPlaying || progress != "5"
+                ? ""
+                : "click on the visualizer to play the tune"}
+              {progress === "15" ? (
+                <div className="grid place-content-center">
+                  {gameInformation[1]}
+                </div>
+              ) : (
+                ""
+              )}
+              {progress === "10" || progress === "15"
+                ? gameInformation[0].join(", ")
+                : ""}
             </div>
           </div>
 

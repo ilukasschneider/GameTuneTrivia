@@ -2,10 +2,11 @@
 import GameSearchbar from "@/components/ui/game-ui/game-searchbar";
 import SoundVisualizer from "@/components/ui/game-ui/sound-visualizer";
 import { Button } from "@/components/ui/button";
-import { getTuneData } from "@/lib/db/db-utils";
+import { getTuneData, getGameInfos } from "@/lib/db/db-utils";
 import { Suspense, useEffect, useState } from "react";
 import { YTPlayer } from "@/components/ui/audio-player/yt-player";
 import { ConfettiCanvas } from "@/components/ui/game-ui/confetti/confettiCanvas";
+import { Badge } from "@/components/ui/badge";
 
 export default function Tune({ params }: { params: { id: string } }) {
   // State to track the user's progress, initializing from localStorage if available
@@ -79,6 +80,7 @@ export default function Tune({ params }: { params: { id: string } }) {
   const correctGameIDs = tuneData.game_ids;
   const audio = `/static/audio/${tuneData.id}/audio.mp3`;
   const [selectedGameID, setSelectedGameID] = useState(-1);
+  const gameInformation = getGameInfos(correctGameIDs[0]);
 
   // Function to check the user's guess
   function checkGuess() {
@@ -129,7 +131,19 @@ export default function Tune({ params }: { params: { id: string } }) {
             </Suspense>
           </div>
           <div className="grid place-content-center 3 pb-5">
-            {isPlaying ? "" : "click on the visualizer to play the tune"}
+            {isPlaying || progress != "5"
+              ? ""
+              : "click on the visualizer to play the tune"}
+            {progress === "15" ? (
+              <div className="grid place-content-center">
+                {gameInformation[1]}
+              </div>
+            ) : (
+              ""
+            )}
+            {progress === "10" || progress === "15"
+              ? gameInformation[0].join(", ")
+              : ""}
           </div>
           <div className="grid place-content-center gap-4 mt-4 sm:mt-6 lg:mt-8 xl:mt-10">
             <div className="flex justify-center gap-3 sm:gap-4 lg:gap-5">

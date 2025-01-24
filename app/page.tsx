@@ -4,7 +4,7 @@ import Link from "next/link";
 import data from "@/lib/trivia-linking.json";
 
 // Compute the number of days since October 13, 2024
-const startDate = new Date("2025-01-22");
+const startDate = new Date("2025-01-01");
 const today = new Date();
 // Calculate the difference in time
 const diffTime = today.getTime() - startDate.getTime();

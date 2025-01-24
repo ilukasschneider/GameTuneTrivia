@@ -56,9 +56,34 @@ export function getAllGames(): Array<{
   return formattedGames;
 }
 
-// Placeholder for a future searchGameID function
-export function searchGameID() {
-  return null;
+/**
+ * Takes a game’s ID and returns an array with two elements:
+ *   - An array of genre names
+ *   - The year the game was released
+ *
+ * @param gameID The ID of the game.
+ * @returns [Array of genres, release year]
+ */
+export function getGameInfos(gameID: string | number): [string[], number] {
+  // Ensure we’re dealing with a string key, since the data object keys are strings (e.g. "3601")
+  const key = String(gameID);
+
+  // Attempt to find the game in the data
+  const game = data.games[key as keyof typeof data.games];
+
+  if (!game) {
+    // If the game is not found, return an empty array for genres and -1 for release year
+    return [[], -1];
+  }
+
+  // Extract the genres as an array of strings
+  const genres = game.genres.map((genre: { name: string }) => genre.name);
+
+  // Convert the releaseYear (which is seconds-based in your JSON) to a JavaScript year
+  const releaseYear = new Date(game.releaseYear * 1000).getFullYear();
+
+  // Return the two pieces of information in an array
+  return [genres, releaseYear];
 }
 
 /**
